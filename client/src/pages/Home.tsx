@@ -366,7 +366,7 @@ export default function Home() {
           >
             <p className="font-sans tracking-widest text-sm text-foreground/60 uppercase mb-4">Full custom build</p>
             <h2 className="text-4xl md:text-5xl font-serif mb-6">
-              A site built around your work. Not a template wearing a costume.
+              A site built entirely around your practice — your copy, your brand, your clients.
             </h2>
             <p className="text-foreground/60 text-xl font-light max-w-3xl mb-12">
               We start with an audit so we know exactly what the site needs to say. Then I build it — custom-coded, designed around your brand, written in your clients' language.
