@@ -1,0 +1,134 @@
+dd a new page at /templates with the following structure. This is a product page that showcases four Squarespace templates for sale.
+
+Page sections in order:
+
+
+
+
+
+Hero: Headline "Find your website." Subhead: "Squarespace templates built for therapists and coaches. Calm design, clear structure, easy to make yours." No CTA button.
+
+
+
+Anchor nav: A horizontal row of five anchor links (Cedar Grove, Elevate, Lara, Mountains, Allison) that jump to each template section below. Style it cleanly, inline, like a directory.
+
+
+
+Who these are for: Short 2-line block: "These templates are for therapists and coaches who want a site that looks professional, feels like them, and doesn't require 40 hours to set up. Add your words and photos, publish when ready." No CTA.
+
+
+
+What every template includes: A shared block showing what's included in all templates. Use a clean list or icon grid:
+
+
+
+
+
+Fully designed Squarespace template
+
+
+
+All key pages built and ready (Home, About, Services, Contact)
+
+
+
+Step-by-step setup guide
+
+
+
+Font and color recommendations
+
+
+
+Mobile-optimized layout
+
+
+
+Email support
+
+
+
+Five template sections (one per template, in this order: Cedar Grove, Elevate, Lara, Mountains, Allison): Each section has:
+
+
+
+
+
+An anchor ID (e.g. id="cedar-grove")
+
+
+
+Template name (large serif heading)
+
+
+
+One-line descriptor (placeholder: "Warm and grounding. For solo practices.")
+
+
+
+"Best for:" line (placeholder: "Therapists in private practice, coaches, counsellors")
+
+
+
+3–4 image placeholders (I'll add real photos; use placeholder image divs with aspect ratio 4:3 for now)
+
+
+
+Price: [PRICE — to be filled in]
+
+
+
+Primary CTA button: "Get this template" → href="#" (I'll add Gumroad links later)
+
+
+
+Optional secondary link: "Preview demo" → href="#"
+
+
+
+How it works: Three numbered steps:
+
+
+
+
+
+Choose your template — pick the design that feels most like you.
+
+
+
+Get instant access — you'll receive the template link and setup guide right away.
+
+
+
+Add your content — swap in your words, photos, and colors. Publish when ready.
+
+
+
+Final CTA section: "Not sure which one to pick?" / "Book a free discovery call and I'll help you choose." Button: "Book a call" → /contact
+
+Style: Match the existing site design system (same fonts, spacing, card styles, motion). Keep it clean and editorial. The template sections can alternate layout (image left / text right, then flip) or use a consistent card grid — your call, but make it feel like a proper product directory, not a blog list.
+
+Nav: Add "Templates" to the site navigation linking to /templates.
+
+
+
+Notes and follow-up
+
+
+
+
+
+Prices: Fill in before launch. Confirm what you charge per template (check Etsy listings).
+
+
+
+Demo URLs: If you have live Squarespace demo previews, add them as "Preview demo" links on each card.
+
+
+
+Gumroad links: Set up Gumroad listings for each template before launch, then replace the href="#" placeholders.
+
+
+
+Copy: The descriptor and "best for" lines above are placeholders. You'll want to write one real sentence per template once you decide how to position each (e.g. Cedar Grove = more grounding/natural, Elevate = more polished/professional, etc.).
+

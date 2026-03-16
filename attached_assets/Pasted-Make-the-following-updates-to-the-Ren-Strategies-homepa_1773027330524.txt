@@ -1,0 +1,35 @@
+Make the following updates to the Ren Strategies homepage:
+1. Update the hero headline
+Replace the existing hero headline with: 'Someone just landed on your website. Within seconds they've decided if you feel safe enough to reach out to.'
+Keep the existing subheading and CTA buttons as they are.
+2. Replace the stats section with a testimonial
+Remove the stats section entirely. Replace it with a single large centered pull quote in Cormorant Garamond italic:
+'I'm very glad I decided to bring Miranda onto my team when I decided to launch my private counselling therapy practice. She is exactly the sort of one-person-wizard to have on your team -- engaging and thorough, kind and fun to chat with, and an expert with the ability to present technical concepts in plain English.'
+Attribution beneath: '-- Sarah K., Private Practice Therapist, Vancouver BC' in DM Sans, muted, centered. Soft warm background tint, generous padding.
+3. Update the 'Sound familiar?' section
+Replace existing pain point cards with these three:
+Card 1: 'I just need to get something live.' -- You've been putting it off for months. You know what you do, you just can't find the words -- and every week without a website is a week you're not showing up where your clients are looking.
+Card 2: 'I've had a website for years and I'm embarrassed by it.' -- It doesn't reflect who you are anymore. The copy feels stiff, the design feels dated, and you cringe a little every time you hand someone your card.
+Card 3: 'I'm growing and my site isn't keeping up.' -- New clinicians, new locations, a press mention you keep meaning to add. Your practice has evolved but your website is frozen in 2019.
+Add a transition line below: 'Wherever you are, there's a way forward that fits.'
+4. Replace 'Two ways to move forward' with an interactive 'Find your fit' selector
+Three clickable cards that reveal a panel on click. Only one panel open at a time. Smooth max-height CSS transition. Match existing design system.
+Card 1: 'I need to launch something fast'
+Panel: 'You've been putting it off long enough. Our Squarespace templates are built specifically for therapists and coaches -- compliance-aware, conversion-ready, and designed to feel like you from day one. Grab one and be live this week.'
+CTA: 'Browse templates'
+Card 2: 'My site needs a full redo'
+Panel: 'You don't need to spend $3,000 to get a site you're proud of. Tend turns your intake form into a warm, professional, multi-page website within 48 hours. You fill out the form. We handle the rest.'
+CTA: 'Get started with Tend' -- links to tend.renstrategies.ca
+Card 3: 'I'm not sure what my site needs'
+Panel: 'Sometimes you just need a second set of eyes. A quick audit gives you a clear picture of what's working, what isn't, and exactly what to fix -- no jargon, no overwhelm. Most people walk away knowing exactly which direction to take next.'
+CTA: 'Book an audit'
+Selected card gets a soft sage green border and background tint.
+5. Shrink the Audit Process section
+Reduce heading size, reduce padding, make it feel like a quiet supporting section rather than a feature moment.
+6. Update templates section
+Add a subheading beneath the existing heading: 'Three templates built specifically for therapists and coaches. Compliance-aware, conversion-ready, and designed to feel like you.'
+7. Add a before/after section
+Place it after the testimonial, before the templates section. Heading: 'This is the difference.' Subheading: 'From clinical and forgettable to warm and unmistakably you.'
+Build two side-by-side website mockups in pure HTML and CSS -- no real screenshots needed. The 'before' mockup should look generic and cold: Times New Roman, harsh blue accents, dense text, no warmth. The 'after' mockup should look like a Ren Strategies site: Cormorant Garamond, sage green, warm and spacious. Add a toggle button that switches between before and after states with a smooth transition.
+8. Add a Mailchimp newsletter section
+Place it above the final CTA section. Heading: 'Practical marketing advice for therapists and coaches -- straight to your inbox.' Subheading: 'No fluff. No pushy tactics. Just clear, ethical strategies you can actually use.' Email input field and submit button that says 'Send me the good stuff.' Add a placeholder form action URL with a comment: replace this URL with your Mailchimp embed form action URL.
