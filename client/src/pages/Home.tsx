@@ -222,7 +222,7 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-6">
           {[
             { id: "launch", label: "I need to launch something fast", target: "templates" },
-            { id: "redo", label: "My site needs a full redo", target: "audit-process" },
+            { id: "redo", label: "My site needs a full redo", target: "custom-build" },
             { id: "unsure", label: "I'm not sure what my site needs", target: "audit-process" },
           ].map((card, i) => (
             <motion.button
@@ -353,51 +353,51 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Tend Section */}
-      <section id="tend" className="py-20 px-6 md:px-12">
+
+      {/* Custom Build Section */}
+      <section id="custom-build" className="py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeIn}
-            className="text-center"
+            className="mb-12"
           >
-            <p className="font-sans tracking-widest text-sm text-foreground/60 uppercase mb-4">Need it fast</p>
-            <h2 className="text-4xl md:text-5xl font-serif mb-4 text-foreground" data-testid="text-tend-heading">
-              Live in 48 hours. No strategy work required.
+            <p className="font-sans tracking-widest text-sm text-foreground/60 uppercase mb-4">Full custom build</p>
+            <h2 className="text-4xl md:text-5xl font-serif mb-6">
+              A site built around your work. Not a template wearing a costume.
             </h2>
-            <p className="text-foreground/60 text-xl font-light mb-14 max-w-3xl mx-auto">
-              Fill out a form about your practice. We build your site and hand it over — ready to go.
-              Right for you if you need something live quickly and aren't ready for a full strategy engagement.
+            <p className="text-foreground/60 text-xl font-light max-w-3xl mb-12">
+              We start with an audit so we know exactly what the site needs to say. Then I build it — custom-coded, designed around your brand, written in your clients' language.
             </p>
-            <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-16 mb-14">
-              <div className="text-center">
-                <div className="text-4xl md:text-5xl text-primary font-serif mb-2">48 hours</div>
-                <p className="text-foreground/50 text-sm font-sans tracking-wide">from form to live site</p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl md:text-5xl text-primary font-serif mb-2">$297</div>
-                <p className="text-foreground/50 text-sm font-sans tracking-wide">to launch</p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl md:text-5xl text-primary font-serif mb-2">$39/mo</div>
-                <p className="text-foreground/50 text-sm font-sans tracking-wide">add self-serve editing anytime</p>
-              </div>
-            </div>
-            <Button
-              asChild
-              size="lg"
-              className="rounded-none bg-foreground text-background hover:bg-foreground/90 px-10 py-6 text-lg h-auto"
-              data-testid="button-tend-cta"
-            >
-              <a href="https://tendbyren.replit.app/" target="_blank" rel="noopener noreferrer">Get started</a>
-            </Button>
           </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {[
+              { stat: "4–6 weeks", label: "from deposit to launch" },
+              { stat: "No monthly fees", label: "your site runs without a Squarespace subscription" },
+              { stat: "No dependency", label: "it keeps running whether you work with me or not" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="border border-border p-8"
+              >
+                <div className="text-3xl md:text-4xl text-primary font-serif mb-2">{item.stat}</div>
+                <p className="text-foreground/50 text-sm font-sans tracking-wide">{item.label}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <Button asChild size="lg" className="rounded-none bg-foreground text-background hover:bg-foreground/90 px-10 py-6 text-lg h-auto">
+            <Link href="/contact">Book a discovery call</Link>
+          </Button>
         </div>
       </section>
-
-      <div className="py-12" />
 
       {/* Audit Process */}
       <section id="audit-process" className="bg-[#e8e6e1] py-20 px-6 md:px-12">
