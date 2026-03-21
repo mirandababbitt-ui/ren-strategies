@@ -177,6 +177,9 @@ export default function Services() {
         >
           <p className="font-sans tracking-widest text-sm text-foreground/50 uppercase mb-3">Beyond the audit</p>
           <h2 className="text-3xl md:text-4xl">Need more than a roadmap?</h2>
+          <p className="text-foreground/60 font-light leading-relaxed mt-4 max-w-2xl">
+            If you need a new site, I do custom website design too. Strategy first, then a build that fits your practice and makes it easy to book.
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
@@ -213,19 +216,16 @@ export default function Services() {
             transition={{ delay: 0.1 }}
             className="border border-border p-10 flex flex-col"
           >
-            <h3 className="text-3xl font-serif mb-2">Implementation</h3>
+            <h3 className="text-3xl font-serif mb-2">Custom Website Design</h3>
             <p className="text-foreground/50 font-mono text-sm mb-3">CUSTOM PRICING</p>
             <p className="text-primary/80 text-sm font-semibold mb-6 tracking-wide">
-              For you if: you have an audit (or already know what needs fixing) but no time — or no desire — to touch your website yourself.
+              For you if: you want a site built for you, or you have an audit (or already know what needs fixing) but no time, or no desire, to touch your website yourself.
             </p>
             <p className="font-light leading-relaxed mb-4 flex-1">
-              I go in and make the changes for you. That might mean implementing your audit
-              recommendations on your existing site, or building something new from the ground up.
-              Either way, you get a flat-fee quote before anything starts.
+              I either implement your audit recommendations on your existing site, or design and build something new from scratch. Either way, you get a flat-fee quote before anything starts.
             </p>
             <p className="text-foreground/50 text-sm font-light mb-8">
-              For existing sites, I work in WordPress and Squarespace. For new builds, I build
-              custom-coded sites from scratch.
+              For existing sites, I work in WordPress and Squarespace. For new builds, I design and build custom-coded sites from scratch.
             </p>
             <Link href="/contact">
               <span className="text-primary hover-underline font-semibold tracking-wide cursor-pointer">Book a discovery call &rarr;</span>

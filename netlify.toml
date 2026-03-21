@@ -1,0 +1,8 @@
+# Set Netlify "Base directory" to this folder (ren-strategies-main), or use a monorepo
+# build with command below from repo root if needed.
+
+[build]
+  command = "npm run build"
+  publish = "dist/public"
+
+# SPA routes: client/public/_redirects is copied into dist/public by Vite

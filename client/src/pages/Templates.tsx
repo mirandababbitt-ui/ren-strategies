@@ -85,12 +85,12 @@ const templates = [
 ];
 
 const features = [
-  "Fully designed Squarespace template",
-  "All key pages built and ready",
-  "Step-by-step setup guide",
-  "Font and color recommendations",
-  "Mobile-optimized layout",
-  "Email support",
+  "Homepage, services, about, and contact pages already laid out",
+  "Clear sections for fees, approaches, and who you work with",
+  "Copy prompts written specifically for therapists and coaches",
+  "Step-by-step setup guide so you always know what to do next",
+  "Mobile-optimized layout that looks good on any device",
+  "Light email support if you get stuck",
 ];
 
 export default function Templates() {
@@ -153,9 +153,9 @@ export default function Templates() {
           variants={fadeIn}
           className="max-w-3xl"
         >
-          <h1 className="text-5xl md:text-7xl mb-8 font-serif">Find your website.</h1>
+          <h1 className="text-5xl md:text-7xl mb-8 font-serif">Launch a therapist website this week.</h1>
           <p className="text-xl text-foreground/70 font-light leading-relaxed">
-            Squarespace templates built for therapists and coaches. Calm design, clear structure, easy to make yours.
+            Squarespace templates built for therapists and coaches. No staring at a blank page, no guessing what sections you need — just a site that already knows how your practice works.
           </p>
         </motion.div>
       </section>
@@ -184,7 +184,7 @@ export default function Templates() {
           variants={fadeIn}
           className="text-xl md:text-2xl text-foreground/80 font-light leading-relaxed italic"
         >
-          These templates are for therapists and coaches who want a site that looks professional, feels like them, and doesn't require 40 hours to set up. Add your words and photos, publish when ready.
+          These templates are for therapists and coaches who want a site that looks professional, feels like them, and doesn't require 40 hours to set up. Follow the prompts, add your words and photos, and publish when you're ready.
         </motion.p>
       </section>
 
@@ -262,7 +262,7 @@ export default function Templates() {
               {
                 num: "03",
                 title: "Add your content",
-                desc: "Swap in your words, photos, and colors. Publish when ready."
+                desc: "Follow the guided checklist to add your words, photos, and colors. Most therapists can be live in a weekend."
               }
             ].map((step, i) => (
               <div key={i} className="space-y-6">
