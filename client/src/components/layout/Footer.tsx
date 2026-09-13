@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="md:col-span-2 space-y-6">
           <h2 className="font-serif text-3xl font-semibold">Ren Strategies</h2>
           <p className="text-card-foreground/70 max-w-sm font-sans font-light leading-relaxed">
-            Website audit and conversion optimization consulting for mission-driven organizations, therapists, and coaches.
+            Websites, follow-up, and automation systems for a clearer prospective-client journey. Current focus: therapists and private practices.
           </p>
         </div>
         
@@ -46,7 +46,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/mirandababbitt" target="_blank" rel="noopener noreferrer" className="text-card-foreground/70 hover:text-primary transition-colors font-light">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/mirandababbitt" target="_blank" rel="noopener noreferrer" className="text-card-foreground/70 hover:text-primary transition-colors font-light">LinkedIn — Miranda</a>
             </li>
           </ul>
         </div>

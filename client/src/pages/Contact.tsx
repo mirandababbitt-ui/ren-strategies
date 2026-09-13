@@ -75,7 +75,7 @@ export default function Contact() {
     <div className="pt-32 pb-32 min-h-[90vh]">
       <SEO
         title="Contact & Book a Discovery Call"
-        description="Ready to fix your website? Book a free discovery call or send a message. Let's figure out why your site isn't converting and what to do about it."
+        description="Book a discovery call with Ren Strategies to find and fix friction across your website, inquiry follow-up, automation, or broader prospective-client journey."
         path="/contact"
         keywords="book website audit, free discovery call, website consultation, therapist website help, contact Ren Strategies"
       />
@@ -100,7 +100,7 @@ export default function Contact() {
               Let's figure <br/> this out.
             </h1>
             <p className="text-xl text-foreground/70 font-light leading-relaxed mb-12">
-              I'd love to hear what's bringing you here. Fill out the form, and we can discuss if an audit or custom strategy is the right next step for your business.
+              Tell me where prospective clients seem to get stuck. We can work out whether the right next step is a website audit, a focused fix, or a broader client journey system.
             </p>
 
             <div className="bg-[#e8e6e1] p-8 border border-border">
@@ -167,7 +167,7 @@ export default function Contact() {
                       <FormLabel className="text-card-foreground font-sans tracking-wide text-sm uppercase">What services are you interested in?</FormLabel>
                       <FormControl>
                         <Input 
-                          placeholder="Website Audit, Strategy, etc." 
+                          placeholder="Website audit, inquiry follow-up, automation, etc."
                           {...field} 
                           className="rounded-none border-0 border-b border-card-foreground/20 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-primary transition-colors"
                         />
@@ -185,7 +185,7 @@ export default function Contact() {
                       <FormLabel className="text-card-foreground font-sans tracking-wide text-sm uppercase">What's your biggest challenge right now?</FormLabel>
                       <FormControl>
                         <Textarea 
-                          placeholder="I'm getting traffic but no one is booking calls..." 
+                          placeholder="People are reaching out, but our follow-up is inconsistent..."
                           {...field} 
                           className="rounded-none border-0 border-b border-card-foreground/20 bg-transparent px-0 min-h-[100px] resize-none focus-visible:ring-0 focus-visible:border-primary transition-colors"
                         />

@@ -7,11 +7,11 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Miranda Babbitt",
-  jobTitle: "Website Strategist & Conversion Consultant",
+  jobTitle: "Client Journey & Conversion Strategist",
   url: "https://renstrategies.ca/about",
   worksFor: { "@type": "Organization", name: "Ren Strategies", url: "https://renstrategies.ca" },
   address: { "@type": "PostalAddress", addressLocality: "Vancouver", addressCountry: "CA" },
-  knowsAbout: ["Conversion Optimization", "Website Audits", "Copywriting", "UX Design", "Squarespace"],
+  knowsAbout: ["Conversion Optimization", "Website Audits", "Client Journey Strategy", "Marketing Automation", "Inquiry Follow-up Systems"],
 };
 
 export default function About() {
@@ -19,7 +19,7 @@ export default function About() {
     <div className="pt-32 pb-20">
       <SEO
         title="About Miranda Babbitt"
-        description="Hi, I'm Miranda. I help therapists, coaches, and mission-driven organizations stop guessing why their website isn't working. Based in Vancouver, combining data with empathy."
+        description="Miranda Babbitt helps therapists and private practices find and fix friction across the prospective-client journey through websites, follow-up, and thoughtful automation."
         path="/about"
         keywords="Miranda Babbitt, Ren Strategies, Vancouver website consultant, conversion copywriting, website strategist for therapists"
         jsonLd={personSchema}
@@ -60,15 +60,15 @@ export default function About() {
             
             <div className="prose prose-lg prose-p:font-light prose-p:text-foreground/80 prose-p:leading-relaxed prose-headings:font-serif">
               <p className="text-2xl font-serif text-foreground mb-8">
-                I help therapists, coaches, and mission-driven organizations stop guessing why their website isn't working.
+                I help therapists and private practices make the path from first interest to first appointment feel clearer.
               </p>
               
               <p>
-                Based in Vancouver, I started Ren Strategies after watching too many incredibly talented professionals struggle to communicate their value online. 
+                Based in Vancouver, I started Ren Strategies after watching too many incredibly talented professionals lose prospective clients to avoidable friction — unclear websites, slow follow-up, disconnected tools, and too much manual work.
               </p>
               
               <p>
-                You've spent years honing your craft. You know exactly how to hold space for your clients and guide them to breakthroughs. But when it comes to your website, you're stuck relying on generic templates and vague copy like "empowering you to live your best life."
+                You've spent years honing your craft. You know how to hold space for clients and guide them through difficult moments. Your prospective-client journey should carry that same care, from the first visit through the first response.
               </p>
               
               <div className="editorial-divider" />
@@ -76,22 +76,22 @@ export default function About() {
               <h2 className="text-3xl mt-12 mb-6">Data meets empathy.</h2>
               
               <p>
-                My approach is rooted in conversion copywriting principles (shoutout to Joanna Wiebe) combined with a deep respect for the sensitive nature of your work.
+                My approach combines conversion strategy, voice-of-customer research, and thoughtful systems design with a deep respect for the sensitive nature of your work.
               </p>
               
               <p>
-                I don't believe in aggressive sales tactics or manipulative countdown timers. I believe in using voice-of-customer research to find the exact words your prospects are already using to describe their pain, and reflecting that back to them in a clean, frictionless user journey.
+                I don't believe in aggressive sales tactics or automation for its own sake. I use research to understand what prospective clients need, then build a clear journey that responds at the right time and leaves room for a real person where one is needed.
               </p>
               
               <p>
-                When we work together, you get the uncomfortable truth about why your site isn't converting, but you get it from someone who genuinely wants your mission to succeed.
+                When we work together, you get an honest view of where people are getting stuck, a prioritized plan, and practical implementation that gives your team time back.
               </p>
             </div>
 
             <div className="mt-16">
               <Link href="/contact">
                 <span className="inline-block border-b border-foreground pb-1 font-semibold tracking-wide hover:text-primary hover:border-primary transition-colors cursor-pointer">
-                  Let's chat about your site &rarr;
+                  Let's find the friction &rarr;
                 </span>
               </Link>
             </div>

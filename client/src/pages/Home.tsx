@@ -17,15 +17,15 @@ const organizationSchema = {
   name: "Ren Strategies",
   url: "https://renstrategies.ca",
   logo: "https://renstrategies.ca/favicon.png",
-  description: "Website audits and conversion optimization for therapists, coaches, and mission-driven organizations.",
+  description: "Prospective-client journey strategy, websites, follow-up, and automation systems for therapists and private practices.",
   founder: {
     "@type": "Person",
     name: "Miranda Babbitt",
-    jobTitle: "Website Strategist & Conversion Consultant",
+    jobTitle: "Client Journey & Conversion Strategist",
   },
   areaServed: "Worldwide",
   priceRange: "$135–$1500+",
-  serviceType: ["Website Audit", "Conversion Optimization", "Squarespace Templates"],
+  serviceType: ["Website Audit", "Conversion Strategy", "Inquiry Follow-up Systems", "Marketing Automation", "AI Front Desk", "Lifecycle Nurturing"],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Vancouver",
@@ -65,8 +65,8 @@ export default function Home() {
   return (
     <div className="pt-32 pb-20 overflow-hidden">
       <SEO
-        title="Website Audits & Conversion Optimization for Therapists"
-        description="Most therapist sites don't come close to capturing who they actually are. Get a website audit, conversion strategy, or Squarespace template designed to fill your calendar."
+        title="Client Journey Systems for Therapists & Private Practices"
+        description="Ren Strategies finds and fixes friction from first website visit to first appointment through conversion strategy, inquiry follow-up, automation, and thoughtful client journey systems."
         path="/"
         keywords="therapist website audit, coaching website optimization, conversion strategy, Squarespace templates for therapists, fill your calendar, website strategy for coaches"
         jsonLd={organizationSchema}
@@ -86,9 +86,9 @@ export default function Home() {
               className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-8 text-foreground"
               data-testid="text-hero-headline"
             >
-              Someone just landed on your website.{" "}
+              Someone just found your practice.{" "}
               <span className="italic text-primary/90">
-                Within seconds they've decided if you feel safe enough to reach out to.
+                The path from interest to first appointment should feel easy.
               </span>
             </motion.h1>
 
@@ -96,9 +96,10 @@ export default function Home() {
               variants={fadeIn}
               className="text-lg md:text-xl text-foreground/80 mb-10 font-light leading-relaxed"
             >
-              Most therapy and coaching sites lose that visitor before they ever scroll.
-              The copy is too careful. The navigation is too complex. The right client lands,
-              hesitates, and leaves. I find exactly where that's happening — and fix it.
+              A strong website matters. So does what happens after someone fills out your form,
+              calls after hours, or isn't ready to book yet. I find the friction across that
+              journey — and build the website, follow-up, and automation systems that move the
+              right people forward.
             </motion.p>
 
             <motion.div
@@ -114,11 +115,11 @@ export default function Home() {
                 <Link href="/contact">Book a free discovery call</Link>
               </Button>
               <button
-                onClick={() => scrollToSection('templates')}
+                onClick={() => scrollToSection('client-journey')}
                 className="text-foreground/60 hover:text-foreground font-light text-base cursor-pointer flex items-center gap-2 transition-colors underline underline-offset-4"
                 data-testid="button-hero-templates"
               >
-                Or start with a template
+                See the prospective-client journey
               </button>
             </motion.div>
           </motion.div>
@@ -132,7 +133,7 @@ export default function Home() {
             <div className="overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 max-w-md mx-auto">
               <img
                 src={mirandaHero}
-                alt="Miranda Babbitt — Website Strategist"
+                alt="Miranda Babbitt — Client Journey and Conversion Strategist"
                 className="w-full h-auto object-cover object-top relative z-10"
               />
             </div>
@@ -155,16 +156,16 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
-              title: "\"I just need to get something live.\"",
-              desc: "You've been putting it off for months. You know what you do, you just can't find the words — and every week without a website is a week you're not showing up where your clients are looking."
+              title: "\"People find us, but they don't reach out.\"",
+              desc: "Your website gets visits and referrals, but too many prospective clients hesitate before they ever submit the form."
             },
             {
-              title: "\"I've had a website for years and I'm embarrassed by it.\"",
-              desc: "It doesn't reflect who you are anymore. The copy feels stiff, the design feels dated, and you cringe a little every time you hand someone your card."
+              title: "\"They inquire — then disappear.\"",
+              desc: "Someone reaches out after hours or misses your call. By the time your team follows up, the moment has passed."
             },
             {
-              title: "\"I'm growing and my site isn't keeping up.\"",
-              desc: "New clinicians, new locations, a press mention you keep meaning to add. Your practice has evolved but your website is frozen in 2019."
+              title: "\"My team is doing all of this by hand.\"",
+              desc: "The same replies, reminders, and next steps are recreated every day — taking time away from work that needs a human."
             }
           ].map((item, i) => (
             <motion.div
@@ -180,6 +181,64 @@ export default function Home() {
               <p className="text-foreground/70 font-light leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* Prospective Client Journey */}
+      <section id="client-journey" className="bg-card text-card-foreground py-24 px-6 md:px-12">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-end mb-16"
+          >
+            <div>
+              <p className="font-sans tracking-widest text-sm text-primary uppercase mb-4">
+                The prospective-client journey
+              </p>
+              <h2 className="text-4xl md:text-6xl leading-tight">
+                Your website is one moment in a longer decision.
+              </h2>
+            </div>
+            <p className="text-card-foreground/70 text-lg md:text-xl font-light leading-relaxed max-w-xl">
+              Ren looks at the whole path: how someone discovers you, decides whether to trust you,
+              reaches out, hears back, and takes the next step. The goal is a system that feels clear
+              to the client and lighter for your team.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-card-foreground/20">
+            {[
+              { num: "01", title: "Discover", body: "Website, positioning, and conversion strategy that make the right next step clear." },
+              { num: "02", title: "Respond", body: "Inquiry and missed-call follow-up that responds while interest is still alive." },
+              { num: "03", title: "Nurture", body: "Thoughtful lifecycle communication for people who need more time before booking." },
+              { num: "04", title: "Connect", body: "Automation and AI front-desk support with a clean handoff to a real person." },
+            ].map((stage, i) => (
+              <motion.div
+                key={stage.num}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="py-8 lg:px-7 lg:first:pl-0 lg:last:pr-0 border-b border-card-foreground/20 lg:border-r lg:last:border-r-0"
+              >
+                <span className="text-primary font-mono text-sm">{stage.num}</span>
+                <h3 className="text-3xl mt-8 mb-4">{stage.title}</h3>
+                <p className="text-card-foreground/65 font-light leading-relaxed">{stage.body}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-12 flex flex-col sm:flex-row gap-5 sm:items-center">
+            <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6">
+              <Link href="/services#systems">Explore the systems</Link>
+            </Button>
+            <p className="text-card-foreground/50 text-sm">
+              Therapists and private practices are the current focus — not the boundary of the business.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -221,9 +280,9 @@ export default function Home() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            { id: "launch", label: "I need to launch something fast", target: "templates" },
-            { id: "redo", label: "My site needs a full redo", target: "custom-build" },
-            { id: "unsure", label: "I'm not sure what my site needs", target: "audit-process" },
+            { id: "launch", label: "I need a strong website — quickly", target: "templates" },
+            { id: "redo", label: "My client journey needs a full rethink", target: "client-journey" },
+            { id: "unsure", label: "I need to find the friction first", target: "audit-process" },
           ].map((card, i) => (
             <motion.button
               key={card.id}
@@ -479,7 +538,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 items-center">
               <div className="p-10 md:p-16 lg:p-20 space-y-10 relative z-10">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-tight">
-                  See what it feels like for your website to actually get you clients.
+                  Build a clearer path from first interest to first appointment.
                 </h2>
                 <Button
                   asChild
@@ -512,11 +571,11 @@ export default function Home() {
             variants={fadeIn}
           >
             <h2 className="text-3xl md:text-4xl font-serif mb-4" data-testid="text-newsletter-heading">
-              Website tips for therapists and coaches — when I have something worth saying.
+              Better client journeys — when I have something worth saying.
             </h2>
             <p className="text-foreground/60 text-lg font-light mb-10">
-              Copy that doesn't make you cringe. Conversion fixes that don't feel manipulative.
-              No set schedule, no filler.
+              Websites, follow-up, and automation that make it easier for the right person to take
+              the next step. No set schedule, no filler.
             </p>
             <form
               action="https://mailchi.mp/renstrategies/mailing-list"

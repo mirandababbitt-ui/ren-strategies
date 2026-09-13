@@ -44,6 +44,13 @@ const servicesJsonLd = [
       },
     ],
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Client Journey Systems",
+    provider: { "@type": "Organization", name: "Ren Strategies" },
+    description: "Inquiry follow-up, AI front desk, marketing automation, and lifecycle nurturing systems for therapists and private practices.",
+  },
 ];
 
 export default function Services() {
@@ -57,7 +64,7 @@ export default function Services() {
     <div className="pt-32 pb-20">
       <SEO
         title="Services & Pricing"
-        description="Website audit for $495 flat fee. Conversion strategy from $1,500. Clear, transparent pricing for therapists and coaches who want their website to actually convert."
+        description="Website audits, conversion strategy, inquiry follow-up, and automation systems for therapists and private practices. Start with a $495 website audit or scope a custom client journey system."
         path="/services"
         keywords="website audit pricing, therapist website audit, conversion strategy, UX audit, website optimization for therapists, coaching website review"
         jsonLd={servicesJsonLd}
@@ -70,7 +77,7 @@ export default function Services() {
           animate={{ opacity: 1, y: 0 }}
           className="font-sans tracking-widest text-sm text-foreground/50 uppercase mb-6"
         >
-          For therapists, coaches &amp; mission-driven organizations
+          Current focus: therapists &amp; private practices
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -78,8 +85,8 @@ export default function Services() {
           transition={{ delay: 0.05 }}
           className="text-5xl md:text-7xl mb-8"
         >
-          You're getting referrals.{" "}
-          <span className="italic text-primary/90">Your site's losing them.</span>
+          You're getting interest.{" "}
+          <span className="italic text-primary/90">Friction is losing it.</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -87,7 +94,8 @@ export default function Services() {
           transition={{ delay: 0.1 }}
           className="text-xl text-foreground/70 font-light leading-relaxed max-w-2xl mx-auto"
         >
-          I find exactly where the friction is. Then I fix it. Flat fees, clear scope, 7-day turnaround.
+          From the first website visit to the first human response, I find where prospective
+          clients hesitate, disappear, or get left waiting — then build a clearer path forward.
         </motion.p>
       </section>
 
@@ -178,7 +186,9 @@ export default function Services() {
           <p className="font-sans tracking-widest text-sm text-foreground/50 uppercase mb-3">Beyond the audit</p>
           <h2 className="text-3xl md:text-4xl">Need more than a roadmap?</h2>
           <p className="text-foreground/60 font-light leading-relaxed mt-4 max-w-2xl">
-            If you need a new site, I do custom website design too. Strategy first, then a build that fits your practice and makes it easy to book.
+            The website may be the first fix. It may not be the only one. I can carry the strategy
+            through into a new site, a focused implementation, or the systems that support what
+            happens after someone reaches out.
           </p>
         </motion.div>
 
@@ -234,6 +244,60 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Client Journey Systems */}
+      <section id="systems" className="bg-card text-card-foreground py-24 px-6 md:px-12 mb-16 scroll-mt-28">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="grid lg:grid-cols-2 gap-10 lg:gap-20 mb-16"
+          >
+            <div>
+              <p className="font-sans tracking-widest text-sm text-primary uppercase mb-4">Client journey systems</p>
+              <h2 className="text-4xl md:text-6xl leading-tight">When the leak happens after the inquiry.</h2>
+            </div>
+            <div className="space-y-6">
+              <p className="text-card-foreground/75 text-lg font-light leading-relaxed">
+                A better homepage cannot fix a form that goes unanswered, a missed call with no
+                follow-up, or a prospective client who needs one more touchpoint before booking.
+              </p>
+              <p className="text-card-foreground/75 text-lg font-light leading-relaxed">
+                I map what happens now, identify the highest-impact gap, and build the smallest
+                useful system to close it. Scope and pricing depend on your practice, tools, and volume.
+              </p>
+            </div>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 border-t border-card-foreground/20">
+            {[
+              { title: "Inquiry follow-up", body: "Immediate, thoughtful responses and clear next steps after a form submission or missed call." },
+              { title: "AI front desk", body: "Practical reception support for common questions, lead capture, routing, and timely human handoff." },
+              { title: "Lifecycle nurturing", body: "Useful communication for prospective clients who are interested but not ready to book today." },
+              { title: "Marketing automation", body: "Connected tools and repeatable workflows that reduce manual work without making care feel impersonal." },
+            ].map((service, i) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.07 }}
+                className="py-9 md:px-10 md:odd:pl-0 border-b border-card-foreground/20 md:odd:border-r"
+              >
+                <h3 className="text-3xl mb-4">{service.title}</h3>
+                <p className="text-card-foreground/65 font-light leading-relaxed max-w-md">{service.body}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-12">
+            <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6">
+              <Link href="/contact">Talk through the friction</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Why it works — brief proof section */}
       <section className="bg-[#f0f3ed]/60 py-20 px-6 md:px-12 mb-0">
         <div className="container mx-auto max-w-4xl">
@@ -250,8 +314,8 @@ export default function Services() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                heading: "I specialize in one niche.",
-                body: "Therapists, coaches, and mission-driven organizations. That means I already know the objections your visitors have, the language that converts, and the trust signals that matter.",
+                heading: "A focused starting point.",
+                body: "Therapists and private practices are Ren's current beachhead. That focus creates sharper offers and deeper context without placing a permanent boundary around the business.",
               },
               {
                 heading: "Every recommendation is prioritized.",
@@ -285,6 +349,10 @@ export default function Services() {
 
           <div className="space-y-12">
             {[
+              {
+                q: "Do you only work on websites?",
+                a: "No. The website is often the best place to start because it reveals where trust and conversion break down. I also design inquiry follow-up, marketing automation, AI front-desk, and lifecycle nurturing systems when the friction happens elsewhere in the prospective-client journey.",
+              },
               {
                 q: "Do you build websites from scratch?",
                 a: "Yes. I can build a complete custom site, typically after an audit so we know exactly what it needs to say before we build it. I've built custom-coded sites for clients on Netlify, and I'm comfortable with Squarespace and Webflow builds too.",
