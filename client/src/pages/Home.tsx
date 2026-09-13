@@ -425,17 +425,20 @@ export default function Home() {
           >
             <p className="font-sans tracking-widest text-sm text-foreground/60 uppercase mb-4">Full custom build</p>
             <h2 className="text-4xl md:text-5xl font-serif mb-6">
-              A site built entirely around your practice — your copy, your brand, your clients.
+              Built around what you actually need
             </h2>
             <p className="text-foreground/60 text-xl font-light max-w-3xl mb-12">
-              We start with an audit so we know exactly what the site needs to say. Then I build it — custom-coded, designed around your brand, written in your clients' language.
+              I’m not tied to one platform or tech stack. I’ll recommend the simplest setup that makes sense for your business—whether that means working with tools you already use or building something new.
+            </p>
+            <p className="text-foreground/80 text-lg font-medium max-w-3xl">
+              No bloated tech stack. No paying for software you don’t need. No complexity for complexity’s sake.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {[
               { stat: "4–6 weeks", label: "from deposit to launch" },
-              { stat: "No monthly fees", label: "your site runs without a Squarespace subscription" },
+              { stat: "Right-fit tools", label: "no unnecessary recurring software costs" },
               { stat: "No dependency", label: "it keeps running whether you work with me or not" },
             ].map((item, i) => (
               <motion.div
