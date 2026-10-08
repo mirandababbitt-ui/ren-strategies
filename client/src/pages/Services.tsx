@@ -3,7 +3,6 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import SEO from "@/components/SEO";
-import ServicesAnimation from "@/components/ServicesAnimation";
 
 const servicesJsonLd = [
   {
@@ -66,7 +65,7 @@ export default function Services() {
       <SEO
         title="Services & Pricing"
         description="Website audits, conversion strategy, inquiry follow-up, and automation systems for therapists and private practices. Start with a $495 website audit or scope a custom client journey system."
-        path="/services"
+        path="/services-therapists"
         keywords="website audit pricing, therapist website audit, conversion strategy, UX audit, website optimization for therapists, coaching website review"
         jsonLd={servicesJsonLd}
       />
@@ -99,8 +98,6 @@ export default function Services() {
           clients hesitate, disappear, or get left waiting — then build a clearer path forward.
         </motion.p>
       </section>
-
-      <ServicesAnimation />
 
       {/* Signature Service: The Audit */}
       <section className="bg-card text-card-foreground py-24 px-6 md:px-12 mb-16">

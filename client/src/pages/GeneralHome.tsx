@@ -167,7 +167,7 @@ export default function GeneralHome() {
             <h2 className="text-4xl md:text-5xl font-serif">The work, in practice.</h2>
           </div>
           <Link
-            href="/services"
+            href="/services-therapists"
             className="hover-underline text-foreground font-semibold inline-flex items-center gap-2"
           >
             See services & pricing <ArrowRight size={16} aria-hidden="true" />
@@ -222,7 +222,7 @@ export default function GeneralHome() {
                 variant="outline"
                 className="rounded-none border-foreground text-foreground hover:bg-foreground hover:text-background px-6"
               >
-                <Link href="/services">How an audit works</Link>
+                <Link href="/services-therapists">How an audit works</Link>
               </Button>
             </li>
           </ul>

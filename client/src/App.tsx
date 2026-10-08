@@ -12,6 +12,7 @@ import Footer from "@/components/layout/Footer";
 import Home from "@/pages/GeneralHome";
 import Therapists from "@/pages/Home";
 import Services from "@/pages/Services";
+import GettingClients from "@/pages/GettingClients";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Lynda from "@/pages/Lynda";
@@ -25,7 +26,8 @@ function Router() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/therapists" component={Therapists} />
-          <Route path="/services" component={Services} />
+          <Route path="/services" component={GettingClients} />
+          <Route path="/services-therapists" component={Services} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route path="/lynda" component={Lynda} />

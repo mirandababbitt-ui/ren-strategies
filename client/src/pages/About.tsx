@@ -19,9 +19,9 @@ export default function About() {
     <div className="pt-32 pb-20">
       <SEO
         title="About Miranda Babbitt"
-        description="Miranda Babbitt helps therapists and private practices find and fix friction across the prospective-client journey through websites, follow-up, and thoughtful automation."
+        description="Miranda Babbitt helps businesses turn website interest into a clearer next step, through strategy, follow-up, and practical systems."
         path="/about"
-        keywords="Miranda Babbitt, Ren Strategies, Vancouver website consultant, conversion copywriting, website strategist for therapists"
+        keywords="Miranda Babbitt, Ren Strategies, Vancouver website consultant, conversion strategy, website strategist"
         jsonLd={personSchema}
       />
       <section className="container mx-auto px-6 md:px-12">
@@ -60,15 +60,15 @@ export default function About() {
             
             <div className="prose prose-lg prose-p:font-light prose-p:text-foreground/80 prose-p:leading-relaxed prose-headings:font-serif">
               <p className="text-2xl font-serif text-foreground mb-8">
-                I help therapists and private practices make the path from first interest to first appointment feel clearer.
+                I help businesses make the path from first interest to a real conversation feel clearer.
               </p>
               
               <p>
-                Based in Vancouver, I started Ren Strategies after watching too many incredibly talented professionals lose prospective clients to avoidable friction — unclear websites, slow follow-up, disconnected tools, and too much manual work.
+                Based in Vancouver, I started Ren Strategies after watching capable people lose interested customers to ordinary problems: a website that doesn't say what the business does, a form that sits unanswered, tools that don't talk to each other, and too much work done by hand.
               </p>
               
               <p>
-                You've spent years honing your craft. You know how to hold space for clients and guide them through difficult moments. Your prospective-client journey should carry that same care, from the first visit through the first response.
+                The shape of the work is the same across industries. Someone finds you. They try to tell if you're the right fit. They decide whether to take the next step. I look at that whole path, whether you run a practice, a studio, a consultancy, or another kind of company.
               </p>
               
               <div className="editorial-divider" />
@@ -76,15 +76,15 @@ export default function About() {
               <h2 className="text-3xl mt-12 mb-6">Data meets empathy.</h2>
               
               <p>
-                My approach combines conversion strategy, voice-of-customer research, and thoughtful systems design with a deep respect for the sensitive nature of your work.
+                I use conversion strategy, customer research, and simple systems. The goal is to understand what people need to hear before they'll reach out, then build a path that responds at the right time and still leaves room for a person.
               </p>
               
               <p>
-                I don't believe in aggressive sales tactics or automation for its own sake. I use research to understand what prospective clients need, then build a clear journey that responds at the right time and leaves room for a real person where one is needed.
+                Follow-up should feel useful. Automation should save time, and a human should still show up where one is needed.
               </p>
               
               <p>
-                When we work together, you get an honest view of where people are getting stuck, a prioritized plan, and practical implementation that gives your team time back.
+                When we work together, you get an honest view of where people get stuck, a short list of what to fix first, and implementation that gives your team time back.
               </p>
             </div>
 

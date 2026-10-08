@@ -241,7 +241,7 @@ export default function Home() {
 
           <div className="mt-12 flex flex-col sm:flex-row gap-5 sm:items-center">
             <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6">
-              <Link href="/services#systems">Explore the systems</Link>
+              <Link href="/services-therapists#systems">Explore the systems</Link>
             </Button>
             <p className="text-card-foreground/50 text-sm">
               Therapists and private practices are the current focus — not the boundary of the business.

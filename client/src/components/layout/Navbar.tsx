@@ -8,8 +8,11 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [audienceMenuOpen, setAudienceMenuOpen] = useState(false);
+  const [servicesMenuOpen, setServicesMenuOpen] = useState(false);
   const audienceMenuRef = useRef<HTMLDivElement>(null);
   const mobileAudienceMenuRef = useRef<HTMLDivElement>(null);
+  const servicesMenuRef = useRef<HTMLDivElement>(null);
+  const mobileServicesMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,13 +27,19 @@ export default function Navbar() {
       const target = event.target as Node;
       if (
         !audienceMenuRef.current?.contains(target) &&
-        !mobileAudienceMenuRef.current?.contains(target)
+        !mobileAudienceMenuRef.current?.contains(target) &&
+        !servicesMenuRef.current?.contains(target) &&
+        !mobileServicesMenuRef.current?.contains(target)
       ) {
         setAudienceMenuOpen(false);
+        setServicesMenuOpen(false);
       }
     };
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setAudienceMenuOpen(false);
+      if (event.key === "Escape") {
+        setAudienceMenuOpen(false);
+        setServicesMenuOpen(false);
+      }
     };
     document.addEventListener("pointerdown", handlePointerDown);
     document.addEventListener("keydown", handleKeyDown);
@@ -45,12 +54,16 @@ export default function Navbar() {
     { name: "Contact", path: "/contact" },
   ];
 
+  const serviceLinks = [
+    { name: "Getting New Clients", path: "/services" },
+  ];
   const audienceLinks = [
     { name: "Therapist & coach overview", path: "/therapists" },
-    { name: "Services", path: "/services" },
+    { name: "Services", path: "/services-therapists" },
     { name: "Templates", path: "/templates" },
   ];
   const isAudiencePage = audienceLinks.some((link) => location === link.path);
+  const isServicesPage = serviceLinks.some((link) => location === link.path);
 
   return (
     <header
@@ -58,12 +71,6 @@ export default function Navbar() {
         isScrolled ? "bg-background/95 backdrop-blur-md" : "bg-background/90 backdrop-blur-sm"
       }`}
     >
-      <div className="h-8 bg-[#e8e6e1] text-foreground/75 flex items-center justify-center px-4">
-        <p className="font-sans text-[10px] sm:text-xs tracking-[0.08em]">
-          Ren Strategies for Therapists and Coaches
-        </p>
-      </div>
-
       <div className="container mx-auto px-6 md:px-12 min-h-[76px] flex justify-between items-center">
         <Link
           href="/"
@@ -74,6 +81,41 @@ export default function Navbar() {
         </Link>
 
         <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <div className="relative" ref={servicesMenuRef}>
+            <button
+              type="button"
+              aria-expanded={servicesMenuOpen}
+              aria-controls="services-menu"
+              onClick={() => {
+                setServicesMenuOpen((open) => !open);
+                setAudienceMenuOpen(false);
+              }}
+              className={`inline-flex items-center gap-1.5 text-sm tracking-wide transition-colors hover:text-primary ${
+                isServicesPage ? "text-primary font-semibold" : "text-foreground/80"
+              }`}
+            >
+              Services
+              <ChevronDown size={15} aria-hidden="true" className={`transition-transform ${servicesMenuOpen ? "rotate-180" : ""}`} />
+            </button>
+            {servicesMenuOpen && (
+              <div
+                id="services-menu"
+                role="menu"
+                className="absolute left-0 top-full mt-4 w-64 border border-border bg-background p-2 shadow-lg"
+              >
+                {serviceLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    href={link.path}
+                    onClick={() => setServicesMenuOpen(false)}
+                    className="block px-4 py-3 text-sm text-foreground/80 hover:bg-[#e8e6e1] hover:text-foreground focus:bg-[#e8e6e1] focus:outline-none"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -90,7 +132,10 @@ export default function Navbar() {
               type="button"
               aria-expanded={audienceMenuOpen}
               aria-controls="audience-menu"
-              onClick={() => setAudienceMenuOpen((open) => !open)}
+              onClick={() => {
+                setAudienceMenuOpen((open) => !open);
+                setServicesMenuOpen(false);
+              }}
               onKeyDown={(event) => {
                 if (event.key === "ArrowDown") {
                   event.preventDefault();
@@ -161,12 +206,44 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
+          <div ref={mobileServicesMenuRef} className="border-t border-border/70 mt-2 pt-3">
+            <button
+              type="button"
+              aria-expanded={servicesMenuOpen}
+              aria-controls="mobile-services-menu"
+              onClick={() => setServicesMenuOpen((open) => !open)}
+              className="w-full flex justify-between items-center py-2 text-left font-serif text-lg"
+            >
+              Services
+              <ChevronDown size={18} aria-hidden="true" className={`transition-transform ${servicesMenuOpen ? "rotate-180" : ""}`} />
+            </button>
+            {servicesMenuOpen && (
+              <div id="mobile-services-menu" className="flex flex-col pl-4 border-l border-primary/40">
+                {serviceLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    href={link.path}
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      setServicesMenuOpen(false);
+                    }}
+                    className="py-2.5 text-sm text-foreground/75 hover:text-primary"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
           <div ref={mobileAudienceMenuRef} className="border-t border-border/70 mt-2 pt-3">
             <button
               type="button"
               aria-expanded={audienceMenuOpen}
               aria-controls="mobile-audience-menu"
-              onClick={() => setAudienceMenuOpen((open) => !open)}
+              onClick={() => {
+                setAudienceMenuOpen((open) => !open);
+                setServicesMenuOpen(false);
+              }}
               className="w-full flex justify-between items-center py-2 text-left font-serif text-lg"
             >
               Are you a therapist or coach?
