@@ -199,6 +199,10 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
 .final h3{font-size:clamp(1.8rem,3.6cqi,2.8rem);line-height:1.12;max-width:20ch}
 .price{font-family:var(--fh);font-size:clamp(1.6rem,2.8cqi,2.2rem);line-height:1.2;margin:0}
 .price span{display:block;font-family:var(--fb);font-size:1rem;line-height:1.45;color:var(--n700);font-weight:500;margin-top:6px}
+.tiers{list-style:none;margin:0;padding:0;display:grid;gap:14px;width:min(100%,640px)}
+.tiers li{display:grid;gap:4px;background:var(--n100);padding:16px 18px;box-shadow:var(--sh-sm)}
+.tiers b{font-family:var(--fh);font-weight:400;font-size:1.35rem}
+.tiers span{font-size:.98rem;line-height:1.45;color:var(--n800)}
 
 /* video + cta */
 .video{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.75fr);gap:clamp(28px,5cqi,64px);align-items:center;margin-top:clamp(72px,10cqi,128px)}
@@ -375,7 +379,12 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
 
   <div class="final">
     <h3>Which part of following up takes the most time?</h3>
-    <p class="price">Free for 90 days. <span>Then $197 a month. A more involved setup is quoted, up to $397.</span></p>
+    <p class="price">Free for 90 days. <span>Then a monthly plan, based on the setup.</span></p>
+    <ul class="tiers">
+      <li><b>$197 a month</b><span>A friendly text when you miss a call, with a link to request a quote. You get notified once.</span></li>
+      <li><b>$297 a month</b><span>The same text and quote link, and it keeps notifying you until you’ve called them back.</span></li>
+      <li><b>$397 a month</b><span>Adds quote requests from your website, and a follow-up after you send a quote, until they reply.</span></li>
+    </ul>
     <a class="cta" data-k="cta" href="sms:+17789867616">${ic.msg}Text me at 778-986-7616</a>
   </div>
 </section>`;
