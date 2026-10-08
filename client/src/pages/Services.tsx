@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import SEO from "@/components/SEO";
+import ServicesAnimation from "@/components/ServicesAnimation";
 
 const servicesJsonLd = [
   {
@@ -98,6 +99,8 @@ export default function Services() {
           clients hesitate, disappear, or get left waiting — then build a clearer path forward.
         </motion.p>
       </section>
+
+      <ServicesAnimation />
 
       {/* Signature Service: The Audit */}
       <section className="bg-card text-card-foreground py-24 px-6 md:px-12 mb-16">
