@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="md:col-span-2 space-y-6">
           <h2 className="font-serif text-3xl font-semibold">Ren Strategies</h2>
           <p className="text-card-foreground/70 max-w-sm font-sans font-light leading-relaxed">
-            Websites, follow-up, and automation systems for a clearer prospective-client journey. Current focus: therapists and private practices.
+            Website strategy and conversion consulting for organizations and independent professionals who want their website to work as part of a stronger marketing system.
           </p>
         </div>
         
@@ -17,6 +17,11 @@ export default function Footer() {
             <li>
               <Link href="/">
                 <span className="text-card-foreground/70 hover:text-primary transition-colors font-light cursor-pointer">Home</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/therapists">
+                <span className="text-card-foreground/70 hover:text-primary transition-colors font-light cursor-pointer">Therapists & Coaches</span>
               </Link>
             </li>
             <li>
@@ -46,7 +51,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/mirandababbitt" target="_blank" rel="noopener noreferrer" className="text-card-foreground/70 hover:text-primary transition-colors font-light">LinkedIn — Miranda</a>
+              <a href="https://www.linkedin.com/in/mirandababbitt" target="_blank" rel="noopener noreferrer" className="text-card-foreground/70 hover:text-primary transition-colors font-light">LinkedIn</a>
             </li>
           </ul>
         </div>

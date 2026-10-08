@@ -67,7 +67,7 @@ export default function Home() {
       <SEO
         title="Client Journey Systems for Therapists & Private Practices"
         description="Ren Strategies finds and fixes friction from first website visit to first appointment through conversion strategy, inquiry follow-up, automation, and thoughtful client journey systems."
-        path="/"
+        path="/therapists"
         keywords="therapist website audit, coaching website optimization, conversion strategy, Squarespace templates for therapists, fill your calendar, website strategy for coaches"
         jsonLd={organizationSchema}
       />
@@ -104,23 +104,31 @@ export default function Home() {
 
             <motion.div
               variants={fadeIn}
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
+              className="space-y-5"
             >
-              <Button
-                asChild
-                size="lg"
-                className="rounded-none bg-foreground text-background hover:bg-foreground/90 px-8 py-6 text-lg h-auto"
-                data-testid="button-hero-cta"
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                <Button
+                  asChild
+                  size="lg"
+                  className="rounded-none bg-foreground text-background hover:bg-foreground/90 px-8 py-6 text-lg h-auto"
+                  data-testid="button-hero-cta"
+                >
+                  <Link href="/contact">Book a free discovery call</Link>
+                </Button>
+                <button
+                  onClick={() => scrollToSection('client-journey')}
+                  className="text-foreground/60 hover:text-foreground font-light text-base cursor-pointer flex items-center gap-2 transition-colors underline underline-offset-4"
+                  data-testid="button-hero-templates"
+                >
+                  See the prospective-client journey
+                </button>
+              </div>
+              <Link
+                href="/"
+                className="inline-block text-sm text-foreground/65 underline underline-offset-4 hover:text-primary transition-colors"
               >
-                <Link href="/contact">Book a free discovery call</Link>
-              </Button>
-              <button
-                onClick={() => scrollToSection('client-journey')}
-                className="text-foreground/60 hover:text-foreground font-light text-base cursor-pointer flex items-center gap-2 transition-colors underline underline-offset-4"
-                data-testid="button-hero-templates"
-              >
-                See the prospective-client journey
-              </button>
+                Looking for website strategy beyond therapy? Visit the Ren Strategies homepage.
+              </Link>
             </motion.div>
           </motion.div>
 
