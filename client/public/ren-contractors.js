@@ -380,9 +380,9 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
     <h3>Free for 90 days.</h3>
     <p class="ask">Then a monthly plan, based on the setup.</p>
     <ul class="tiers">
-      <li><b>$197 a month</b><span>A friendly text when you miss a call, with a link to request a quote. You get notified once.</span></li>
-      <li><b>$297 a month</b><span>The same text and quote link, and it keeps notifying you until you’ve called them back.</span></li>
-      <li><b>$397 a month</b><span>Adds quote requests from your website, and a follow-up after you send a quote, until they reply.</span></li>
+      <li><b>$197 a month</b><span>A friendly text goes right back when you miss a call, with a link to request a quote. They can send the job details while they’re still deciding who to hire. You get notified.</span></li>
+      <li><b>$297 a month</b><span>The same text, asking them to submit your quote form. You get friendly nudges to call them back.</span></li>
+      <li><b>$397 a month</b><span>Leads are sorted using criteria you set. You talk to the ones that fit. The rest sit there until you want to look.</span></li>
     </ul>
     <p class="ask">Not sure which fits? Tell me which part of following up takes the most time.</p>
     <a class="cta" data-k="cta" href="sms:+17789867616">${ic.msg}Text me at 778-986-7616</a>
