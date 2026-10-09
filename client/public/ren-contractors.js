@@ -75,8 +75,8 @@ button{font:inherit;color:inherit}
 ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s}
 .steps li{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;padding:10px 12px;border-radius:18px;transition:background .7s}
 .steps .n{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:700;border:2px solid var(--n400);color:var(--n800);background:var(--n100);transition:all .7s}
-.steps b{display:block;font-size:1.05rem;line-height:1.3;margin-top:6px}
-.steps span.d{display:block;font-size:.95rem;line-height:1.45;color:var(--n700);margin-top:3px}
+.steps b{display:block;font-size:1.2rem;line-height:1.3;margin-top:6px}
+.steps span.d{display:block;font-size:1.05rem;line-height:1.4;color:var(--n800);margin-top:4px}
 .steps li.active{background:var(--sg200)}
 .steps li.active .n{background:var(--sg600);border-color:var(--sg600);color:#fff}
 .steps li.done .n{background:var(--sg200);border-color:var(--sg400);color:var(--sg800)}
@@ -171,9 +171,9 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
 .prow:last-of-type{border-bottom:0}
 .prow .mi{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:15px;background:var(--ac100);color:var(--ac700)}
 .prow .tx{display:grid;gap:2px;min-width:0}
-.prow .tx b{font-size:1rem}
-.prow .tx span{font-size:.88rem;color:var(--n700)}
-.prow .amt{font-family:var(--fh);font-size:1.3rem;color:var(--ink);white-space:nowrap}
+.prow .tx b{font-size:1.08rem}
+.prow .tx span{font-size:1rem;line-height:1.35;color:var(--n800)}
+.prow .amt{font-family:var(--fh);font-size:1.55rem;color:var(--ink);white-space:nowrap}
 .ptot{display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin-top:8px;padding:14px 16px;border-radius:18px;background:var(--sg200);color:var(--sg800);font-weight:700}
 .ptot .amt{font-family:var(--fh);font-weight:400;font-size:clamp(2rem,4cqi,2.8rem);line-height:1;color:var(--sg800)}
 .ptot .lab{font-size:1rem;line-height:1.35}
@@ -189,8 +189,8 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
 .svc .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .svc .si{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:20px;background:var(--sg200);color:var(--sg700)}
 .svc .ex{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--n700);border:1.5px solid var(--n300);border-radius:999px;padding:4px 10px}
-.svc h4{font-family:var(--fh);font-weight:400;font-size:1.4rem;line-height:1.2;margin:0}
-.svc p{font-size:1rem;line-height:1.55;color:var(--n800)}
+.svc h4{font-family:var(--fh);font-weight:400;font-size:1.7rem;line-height:1.15;margin:0}
+.svc p{font-size:1.12rem;line-height:1.45;color:var(--n800)}
 .mf{list-style:none;margin:6px 0 0;padding:16px 14px;background:var(--sg200);border-radius:20px;display:grid;gap:0}
 .mf li{position:relative;display:grid;grid-template-columns:30px 1fr;gap:10px;padding-bottom:14px;transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
 .mf li:last-child{padding-bottom:0}
@@ -201,26 +201,26 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
 .mf .mi{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:14px;background:var(--n100);color:var(--sg700)}
 .mf .mi.w{background:var(--ac200);color:var(--ac700)}
 .mf .mi.ok{background:var(--sg600);color:#fff}
-.mf b{display:block;font-size:.95rem;line-height:1.3;padding-top:5px}
-.mf span.t{display:block;font-size:.88rem;line-height:1.4;color:var(--n800);margin-top:2px}
+.mf b{display:block;font-size:1.05rem;line-height:1.3;padding-top:4px}
+.mf span.t{display:block;font-size:1rem;line-height:1.35;color:var(--n800);margin-top:2px}
 
 /* reassurance */
 .assure{margin-top:clamp(56px,8cqi,96px);background:var(--sg200);border-radius:32px;padding:clamp(24px,4cqi,48px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(20px,4cqi,56px);align-items:start}
 .assure h3{font-size:clamp(1.6rem,3cqi,2.2rem);line-height:1.15}
 .assure .at{display:grid;gap:12px}
-.assure p{font-size:1.08rem;line-height:1.6;color:var(--sg800)}
-.final{margin-top:clamp(56px,8cqi,96px);display:grid;gap:24px;justify-items:start;width:100%}
+.assure p{font-size:1.15rem;line-height:1.5;color:var(--sg800)}
+.final{margin-top:clamp(56px,8cqi,96px);display:grid;gap:28px;justify-items:start;width:100%}
 .trial{margin:0;max-width:12em;font-family:var(--fh);font-size:clamp(2.6rem,5.4cqi,4rem);line-height:1.02;letter-spacing:-.01em}
-.trial span{display:block;max-width:22em;margin-top:14px;font-family:var(--fb);font-size:clamp(1.15rem,1.8cqi,1.35rem);line-height:1.45;font-weight:700;color:var(--ink)}
-.final h3{font-size:clamp(1.8rem,3.6cqi,2.8rem);line-height:1.12;max-width:16em}
+.trial span{display:block;max-width:22em;margin-top:14px;font-family:var(--fb);font-size:clamp(1.2rem,1.9cqi,1.45rem);line-height:1.4;font-weight:700;color:var(--ink)}
+.final h3{font-size:clamp(1.35rem,2cqi,1.7rem);line-height:1.25;max-width:22em}
 #plans{scroll-margin-top:96px}
-.final .ask{margin:0;max-width:46ch;font-size:1.05rem;line-height:1.5;color:var(--n800)}
+.final .ask{margin:0;max-width:36em;font-size:1.2rem;line-height:1.45;color:var(--ink)}
 .tiers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:100%}
-.tiers li{display:grid;gap:6px;align-content:start;background:var(--n100);padding:18px 18px 20px;box-shadow:var(--sh-sm)}
+.tiers li{display:grid;gap:8px;align-content:start;background:var(--n100);padding:22px 22px 26px;box-shadow:var(--sh-sm)}
 .tiers li.feat{background:var(--ac100);box-shadow:var(--sh-md);outline:2px solid var(--ac)}
-.tiers b{font-family:var(--fh);font-weight:400;font-size:clamp(1.45rem,2.4cqi,1.8rem);line-height:1.1}
-.tiers .name{font-weight:700;font-size:1rem;line-height:1.3}
-.tiers span{font-size:.98rem;line-height:1.45;color:var(--n800)}
+.tiers b{font-family:var(--fh);font-weight:400;font-size:clamp(1.7rem,2.8cqi,2.2rem);line-height:1.05}
+.tiers .name{font-weight:700;font-size:1.15rem;line-height:1.3}
+.tiers span{font-size:1.12rem;line-height:1.4;color:var(--ink)}
 
 /* video + cta */
 .video{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.75fr);gap:clamp(28px,5cqi,64px);align-items:center;margin-top:clamp(72px,10cqi,128px)}
@@ -300,11 +300,11 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
     </div>
     <div class="grid">
       <ol class="steps" aria-label="Example workflow steps">
-        <li data-step="0"><span class="n">1</span><span><b>You’re focused on work</b><span class="d">A call can come in while you’re in the middle of something else.</span></span></li>
-        <li data-step="1"><span class="n">2</span><span><b>A call goes unanswered</b><span class="d">It rings, then shows as a missed call.</span></span></li>
-        <li data-step="2"><span class="n">3</span><span><b>They get a text from your business</b><span class="d">It names Northside Renovations, with a quote-form link and a way to request a callback.</span></span></li>
+        <li data-step="0"><span class="n">1</span><span><b>You’re focused on work</b><span class="d">A call can come in while you’re busy.</span></span></li>
+        <li data-step="1"><span class="n">2</span><span><b>A call goes unanswered</b><span class="d">It rings, then it’s missed.</span></span></li>
+        <li data-step="2"><span class="n">3</span><span><b>They get a text from your business</b><span class="d">Your quote link, or a way to ask for a callback.</span></span></li>
         <li data-step="3"><span class="n">4</span><span><b>They send details, or ask for a call</b><span class="d">Project details, or a callback request.</span></span></li>
-        <li data-step="4"><span class="n">5</span><span><b>You get a notification</b><span class="d">It shows what they sent, and the next action.</span></span></li>
+        <li data-step="4"><span class="n">5</span><span><b>You get a notification</b><span class="d">What they sent, and what to do next.</span></span></li>
       </ol>
 
       <div class="stagewrap">
@@ -375,7 +375,7 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
 
   <ul class="svcs" aria-label="Example workflows. Website quote requests and estimate follow-up are optional.">
     <li class="svc"><div class="top"><div class="si">${ic.phone}</div><span class="ex">In the plans</span></div>
-      <h4>Responding to a missed call</h4><p>A text goes out with your quote-form link and a way to request a callback. You get a notification with what they sent and the next action.</p>
+      <h4>Responding to a missed call</h4><p>A text with your quote link, then a notification for you.</p>
       <ol class="mf">
         <li><span class="mi w">${ic.missed}</span><span><b>Missed call</b><span class="t">New number · 2:14pm</span></span></li>
         <li><span class="mi">${ic.msg}</span><span><b>Text response sent</b><span class="t">Quote-form link, or a request for a callback</span></span></li>
@@ -384,7 +384,7 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
       </ol>
     </li>
     <li class="svc"><div class="top"><div class="si">${ic.mail}</div><span class="ex">Optional</span></div>
-      <h4>Acknowledging a website quote request</h4><p>Optional, and scoped separately. They can get a short acknowledgement in the time you and I agree. There is no set number of days unless you choose one.</p>
+      <h4>Acknowledging a website quote request</h4><p>Optional. A short reply in the time you and I agree.</p>
       <ol class="mf">
         <li><span class="mi">${ic.mail}</span><span><b>Quote request received</b><span class="t">Website form · Priya S. · bathroom renovation</span></span></li>
         <li><span class="mi">${ic.send}</span><span><b>Acknowledgement sent</b><span class="t">“Thanks for getting in touch. We’ll reply within the time we agreed, to arrange a visit.”</span></span></li>
@@ -393,7 +393,7 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
       </ol>
     </li>
     <li class="svc"><div class="top"><div class="si">${ic.clip}</div><span class="ex">Optional</span></div>
-      <h4>Following up after an estimate is sent</h4><p>Optional, and scoped separately. A check-in can go out on the date you choose, using a message you’ve approved.</p>
+      <h4>Following up after an estimate is sent</h4><p>Optional. A check-in on the date you choose.</p>
       <ol class="mf">
         <li><span class="mi">${ic.clip}</span><span><b>You mark the estimate as sent</b><span class="t">Deck build · follow-up on the date you set</span></span></li>
         <li><span class="mi">${ic.send}</span><span><b>Your approved message is sent</b><span class="t">“Just checking the estimate came through. Happy to answer any questions.”</span></span></li>
@@ -406,9 +406,8 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
   <div class="assure">
     <h3>I start with the phone, website, email, and job tools you already use.</h3>
     <div class="at">
-      <p>Phone setup and call routing are reviewed first. Then I look at how inquiries reach you, and recommend only what fits. Nothing is assumed to connect until that review is done.</p>
-      <p>The setup collects what the caller sends. You still set prices, availability, and what you commit to.</p>
-      <p>Automated follow-up stops at the handoff we configure. A call or message you handle outside that setup may need to be marked as handled.</p>
+      <p>I look at your phone setup and call routing first, then how inquiries reach you. I only recommend what fits.</p>
+      <p>The setup collects what the caller sends. You still set prices, availability, and what you commit to. Follow-up stops at the handoff we set. Anything you handle outside it may need to be marked as handled.</p>
     </div>
   </div>
 
@@ -416,9 +415,9 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
     <p class="trial">Free for 90 days. <span>See the value before you invest in a monthly plan.</span></p>
     <h3>Choose how much help you need with incoming inquiries.</h3>
     <ul class="tiers">
-      <li><b>$197 a month</b><span class="name">Respond when you can’t answer</span><span>Send missed callers a text with your quote-form link and get notified. You handle replies and further follow-up.</span></li>
-      <li class="feat"><b>$297 a month</b><span class="name">Keep the inquiry moving</span><span>Everything in the $197 plan, plus a gentle follow-up when callers haven’t responded and the option to share project details by text. Get their project type, location, and preferred timing before you call back.</span></li>
-      <li><b>$397 a month</b><span class="name">Prioritize the work you want</span><span>Everything in the $297 plan, plus sorting against your service area, project types, and agreed criteria. Review matching inquiries first. Other inquiries stay available, and unclear answers are flagged for review.</span></li>
+      <li><b>$197 a month</b><span class="name">Respond when you can’t answer</span><span>A text with your quote link. You get notified and handle the reply.</span></li>
+      <li class="feat"><b>$297 a month</b><span class="name">Keep the inquiry moving</span><span>Adds a follow-up if they haven’t replied, plus project type, location, and timing.</span></li>
+      <li><b>$397 a month</b><span class="name">Prioritize the work you want</span><span>Adds sorting by your area, project types, and criteria. Other inquiries stay available.</span></li>
     </ul>
     <p class="ask">Which takes up more of your time: getting back to people or figuring out whether the job is a fit?</p>
     <a class="cta" data-k="cta" href="sms:+17789867616">${ic.msg}Text Miranda at 778-986-7616</a>
