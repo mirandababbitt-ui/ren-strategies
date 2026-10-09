@@ -210,6 +210,8 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
 .assure .at{display:grid;gap:12px}
 .assure p{font-size:1.08rem;line-height:1.6;color:var(--sg800)}
 .final{margin-top:clamp(56px,8cqi,96px);display:grid;gap:24px;justify-items:start;width:100%}
+.trial{margin:0;max-width:12em;font-family:var(--fh);font-size:clamp(2.6rem,5.4cqi,4rem);line-height:1.02;letter-spacing:-.01em}
+.trial span{display:block;max-width:22em;margin-top:14px;font-family:var(--fb);font-size:clamp(1.15rem,1.8cqi,1.35rem);line-height:1.45;font-weight:700;color:var(--ink)}
 .final h3{font-size:clamp(1.8rem,3.6cqi,2.8rem);line-height:1.12;max-width:16em}
 #plans{scroll-margin-top:96px}
 .final .ask{margin:0;max-width:46ch;font-size:1.05rem;line-height:1.5;color:var(--n800)}
@@ -411,8 +413,8 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
   </div>
 
   <div class="final" id="plans">
+    <p class="trial">Free for 90 days. <span>See the value before you invest in a monthly plan.</span></p>
     <h3>Choose how much help you need with incoming inquiries.</h3>
-    <p class="ask">Free for 90 days. After that, the monthly price of the plan you choose.</p>
     <ul class="tiers">
       <li><b>$197 a month</b><span class="name">Respond when you can’t answer</span><span>Send missed callers a text with your quote-form link and get notified. You handle replies and further follow-up.</span></li>
       <li class="feat"><b>$297 a month</b><span class="name">Keep the inquiry moving</span><span>Everything in the $197 plan, plus a gentle follow-up when callers haven’t responded and the option to share project details by text. Get their project type, location, and preferred timing before you call back.</span></li>
