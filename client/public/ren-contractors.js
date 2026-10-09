@@ -17,6 +17,8 @@
     check: I('<path d="M20 6 9 17l-5-5"/>'),
     arrow: I('<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>'),
     replay: I('<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>'),
+    chevL: I('<path d="m15 18-6-6 6-6"/>'),
+    chevR: I('<path d="m9 18 6-6-6-6"/>'),
     pause: I('<rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/>'),
     play: I('<polygon points="6 3 20 12 6 21 6 3"/>'),
     globe: I('<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>'),
@@ -53,6 +55,8 @@ button{font:inherit;color:inherit}
 /* workflow */
 .flow{margin-top:clamp(40px,6cqi,64px);background:var(--n100);border-radius:32px;padding:clamp(18px,3cqi,36px);box-shadow:var(--sh-sm)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:clamp(18px,3cqi,28px)}
+.bar-l{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.prog{font-size:.92rem;font-weight:700;color:var(--n700);font-variant-numeric:tabular-nums}
 .tag{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 14px;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--sg200);color:var(--sg800)}
 .ctls{display:flex;gap:8px}
 .ctl{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--n300);background:transparent;border-radius:0;padding:9px 16px;font-size:.92rem;font-weight:600;color:var(--n800);cursor:pointer;min-height:44px}
@@ -60,8 +64,13 @@ button{font:inherit;color:inherit}
 .ctl:active{background:var(--ac200);border-color:var(--ac)}
 .ctl:disabled{opacity:.45;cursor:default}
 .ctl svg{font-size:15px}
-:host(.reduced) .ctls{display:none}
+:host(.reduced) *,:host(.reduced) *::before,:host(.reduced) *::after{transition:none!important;animation:none!important}
 .grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,2fr);gap:clamp(24px,4cqi,48px);align-items:start}
+.stagewrap{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:6px;align-items:center}
+.chev{width:44px;height:64px;border:1.5px solid var(--n300);background:transparent;color:var(--n700);display:grid;place-items:center;cursor:pointer;padding:0}
+.chev svg{width:22px;height:22px}
+.chev:hover:not(:disabled){background:rgb(32 30 29 / .06);color:var(--ink)}
+.chev:disabled{opacity:.35;cursor:default}
 
 ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s}
 .steps li{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;padding:10px 12px;border-radius:18px;transition:background .7s}
@@ -246,6 +255,8 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
 @container (max-width: 760px){
   :host(.seq) .steps li:not(.active){display:none}
   :host(.seq) .steps li.active{background:var(--sg200)}
+  .stagewrap{grid-template-columns:48px minmax(0,1fr) 48px;gap:4px}
+  .chev{width:48px;height:72px}
   .stage{grid-template-columns:1fr}
   .phone{justify-self:center;width:100%;max-width:300px}
   .scr{min-height:470px}
@@ -276,7 +287,10 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
 
   <div class="flow">
     <div class="bar">
-      <span class="tag">Example workflow</span>
+      <div class="bar-l">
+        <span class="tag">Example workflow</span>
+        <span class="prog" data-k="prog" aria-live="polite">Step 1 of 5</span>
+      </div>
       <div class="ctls">
         <button class="ctl" data-act="pause" type="button" aria-pressed="false">${ic.pause}<span>Pause</span></button>
         <button class="ctl" data-act="replay" type="button">${ic.replay}<span>Replay</span></button>
@@ -291,6 +305,8 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
         <li data-step="4"><span class="n">5</span><span><b>You get a notification</b><span class="d">It shows what they sent, and the next action.</span></span></li>
       </ol>
 
+      <div class="stagewrap">
+      <button class="chev" data-act="prev" type="button" aria-label="Previous step" disabled>${ic.chevL}</button>
       <div class="stage" role="img" aria-label="Illustration of the example workflow: the practice view on one side and the caller's phone on the other.">
         <div class="desk" aria-hidden="true">
           <div class="lbl">Your view</div>
@@ -330,6 +346,8 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
             </div>
           </div>
         </div>
+      </div>
+      <button class="chev" data-act="next" type="button" aria-label="Next step">${ic.chevR}</button>
       </div>
     </div>
     <p class="fine">Illustrative example. Message wording, quote links, and follow-up are configured for your business.</p>
@@ -413,28 +431,24 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
       this.root.innerHTML = `<style>${css}</style>${html}`;
       this.k = (n) => this.root.querySelector(`[data-k="${n}"]`);
       this.steps = [...this.root.querySelectorAll('.steps li')];
-      this.elapsed = 0; this.fired = 0; this.playing = false; this.started = false;
+      this.elapsed = 0; this.fired = 0; this.playing = false; this.started = false; this.shown = -1; this.jumpGen = 0;
       const on = (k) => () => this.k(k).classList.add('on');
       const st = (k, s) => () => (this.k(k).dataset.state = s);
       const step = (i) => () => this.steps.forEach((li, j) => { li.classList.toggle('active', j === i); li.classList.toggle('done', j < i); });
+      this.stepAt = [0, 2.5, 5.5, 11.0, 16.8];
       this.events = [
-        [0.6, step(0)],
-        [5.0, step(1)],
-        [5.6, () => { on('call')(); st('call', 'ringing')(); on('calling')(); }],
-        [10.0, () => { st('call', 'missed')(); st('calling', 'missed')(); }],
-        [13.0, step(2)],
-        [13.4, () => this.k('calling').classList.remove('on')],
-        [14.0, on('typing')],
-        [15.8, () => { this.k('typing').classList.add('gone'); on('sms')(); this.k('call').classList.add('sent'); }],
-        [22.0, step(3)],
-        [22.6, on('opts')],
-        [26.6, () => this.k('cb').classList.add('tap')],
-        [28.0, on('reply')],
-        [31.5, step(4)],
-        [32.2, on('note')],
-        [37.5, () => { this.steps.forEach((li) => { li.classList.remove('active'); li.classList.add('done'); }); this.classList.remove('seq'); }],
+        [0.0, step(0)],
+        [2.5, () => { step(1)(); on('call')(); st('call', 'ringing')(); on('calling')(); }],
+        [3.7, () => { st('call', 'missed')(); st('calling', 'missed')(); }],
+        [5.5, () => { step(2)(); this.k('calling').classList.remove('on'); on('typing')(); }],
+        [6.3, () => { this.k('typing').classList.add('gone'); on('sms')(); this.k('call').classList.add('sent'); }],
+        [11.0, () => { step(3)(); on('opts')(); }],
+        [12.2, () => this.k('cb').classList.add('tap')],
+        [12.8, () => on('reply')()],
+        [16.8, () => { step(4)(); on('note')(); }],
       ];
-      this.end = 38;
+      this.settleAt = [0, 3.7, 6.3, 12.8, 16.8];
+      this.end = 16.8;
     }
     get pace() { const p = parseFloat(this.getAttribute('pace')); return p > 0 ? p : 1; }
 
@@ -448,12 +462,29 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
           this.root.querySelector('#plans')?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
           return;
         }
-        ({ replay: () => this.replay(), pause: () => (this.playing ? this.pause() : this.resume()), video: () => this.playVideo() })[b.dataset.act]();
+        ({
+          replay: () => this.replay(),
+          pause: () => (this.playing ? this.pause() : this.resume()),
+          prev: () => this.nudge(-1),
+          next: () => this.nudge(1),
+          video: () => this.playVideo(),
+        })[b.dataset.act]?.();
       });
-      if (matchMedia('(prefers-reduced-motion: reduce)').matches) { this.classList.add('reduced'); this.showFinal(); return; }
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        this.classList.add('reduced', 'instant', 'seq');
+        this.started = true;
+        this.goto(0, true);
+        return;
+      }
       this.classList.add('armed');
       this.io = new IntersectionObserver((ents) => {
-        if (!this.started && ents.some((e) => e.isIntersecting)) { this.started = true; this.classList.add('seq'); this.resume(); this.io.disconnect(); }
+        if (!this.started && ents.some((e) => e.isIntersecting)) {
+          this.started = true;
+          this.classList.add('seq');
+          if (this.manual) this.setPauseUI();
+          else this.resume();
+          this.io.disconnect();
+        }
       }, { threshold: 0.3 });
       this.io.observe(this.root.querySelector('.flow'));
       this.vio = new IntersectionObserver((ents) => ents.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('go'); this.vio.unobserve(e.target); } }), { threshold: 0.35 });
@@ -462,29 +493,95 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
     disconnectedCallback() { this.io?.disconnect(); this.vio?.disconnect(); cancelAnimationFrame(this.raf); }
     attributeChangedCallback() { const a = this.k('cta'); if (a) a.href = this.getAttribute('cta') || 'sms:+17789867616'; }
 
-    showFinal() { this.classList.add('instant'); this.reset(); this.events.forEach(([, fn]) => fn()); this.elapsed = this.end; this.setPauseUI(); }
+    currentStep() {
+      let i = 0;
+      for (let s = 0; s < this.stepAt.length; s++) if (this.elapsed + 0.001 >= this.stepAt[s]) i = s;
+      return i;
+    }
+    updateChrome() {
+      const i = this.currentStep();
+      if (this.shown !== i) {
+        this.shown = i;
+        this.k('prog').textContent = `Step ${i + 1} of 5`;
+      }
+      this.root.querySelector('[data-act="prev"]').disabled = i <= 0;
+      this.root.querySelector('[data-act="next"]').disabled = i >= this.stepAt.length - 1;
+    }
+    applyUntil(t) {
+      this.jumpGen += 1;
+      const gen = this.jumpGen;
+      this.classList.add('instant');
+      this.reset();
+      for (let i = 0; i < this.events.length; i++) {
+        if (this.events[i][0] <= t + 0.001) this.events[i][1]();
+        else break;
+      }
+      this.elapsed = t;
+      this.fired = this.events.findIndex(([time]) => time > t + 0.001);
+      if (this.fired < 0) this.fired = this.events.length;
+      this.updateChrome();
+      this.setPauseUI();
+      if (this.classList.contains('reduced')) return;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        if (gen === this.jumpGen) this.classList.remove('instant');
+      }));
+    }
+    goto(i, manual) {
+      i = Math.max(0, Math.min(this.stepAt.length - 1, i));
+      if (manual) this.pause();
+      const nextStart = this.stepAt[i + 1];
+      const at = nextStart == null ? this.end : Math.max(this.settleAt[i], nextStart - 1);
+      this.applyUntil(at);
+    }
+    nudge(dir) {
+      const n = this.currentStep() + dir;
+      if (n < 0 || n >= this.stepAt.length) return;
+      this.manual = true;
+      this.started = true;
+      this.classList.add('seq');
+      this.io?.disconnect();
+      this.goto(n, true);
+    }
     reset() {
-      this.fired = 0; this.elapsed = 0;
+      this.fired = 0; this.elapsed = 0; this.shown = -1;
       this.steps.forEach((li) => li.classList.remove('active', 'done'));
       this.root.querySelectorAll('.rv.on,.calling.on,.tap,.gone,.sent').forEach((n) => n.classList.remove('on', 'tap', 'gone', 'sent'));
       this.root.querySelectorAll('[data-state]').forEach((n) => n.removeAttribute('data-state'));
     }
     replay() {
-      this.classList.add('instant'); this.reset(); this.classList.add('seq');
-      requestAnimationFrame(() => requestAnimationFrame(() => { this.classList.remove('instant'); this.resume(); }));
+      cancelAnimationFrame(this.raf);
+      this.playing = false;
+      this.manual = false;
+      this.classList.add('seq');
+      if (this.classList.contains('reduced')) { this.goto(0, true); return; }
+      this.jumpGen += 1;
+      const gen = this.jumpGen;
+      this.classList.add('instant');
+      this.reset();
+      this.updateChrome();
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        if (gen !== this.jumpGen) return;
+        this.classList.remove('instant');
+        this.resume();
+      }));
     }
     resume() {
-      if (this.elapsed >= this.end) return this.replay();
+      if (this.classList.contains('reduced')) return;
+      if (this.elapsed >= this.end) return;
       this.playing = true; this.last = performance.now(); this.setPauseUI();
       cancelAnimationFrame(this.raf); this.raf = requestAnimationFrame((t) => this.tick(t));
     }
     pause() { this.playing = false; cancelAnimationFrame(this.raf); this.setPauseUI(); }
     setPauseUI() {
       const b = this.root.querySelector('[data-act="pause"]');
-      const paused = !this.playing && this.elapsed > 0 && this.elapsed < this.end;
+      if (!b) return;
+      const reduced = this.classList.contains('reduced');
+      const atEnd = this.elapsed >= this.end;
+      const paused = !this.playing && !atEnd && this.started && !reduced;
       b.innerHTML = `${paused ? ic.play : ic.pause}<span>${paused ? 'Play' : 'Pause'}</span>`;
       b.setAttribute('aria-pressed', String(paused));
-      b.disabled = this.elapsed >= this.end;
+      b.setAttribute('aria-label', paused ? 'Play' : 'Pause');
+      b.disabled = atEnd || reduced;
       this.root.querySelector('.stage').style.animationPlayState = paused ? 'paused' : '';
     }
     tick(now) {
@@ -492,6 +589,7 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
       this.elapsed += Math.min(now - this.last, 100) / 1000 / this.pace;
       this.last = now;
       while (this.fired < this.events.length && this.events[this.fired][0] <= this.elapsed) this.events[this.fired++][1]();
+      this.updateChrome();
       if (this.elapsed >= this.end) { this.playing = false; this.setPauseUI(); return; }
       this.raf = requestAnimationFrame((t) => this.tick(t));
     }

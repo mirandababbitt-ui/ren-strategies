@@ -20,7 +20,7 @@ export default function GettingClients() {
         path="/services"
         keywords="contractor enquiry follow-up, missed call text back, quote request follow-up, Ren Strategies"
       />
-      {createElement("ren-contractors", { cta: "sms:+17789867616", pace: "0.8" })}
+      {createElement("ren-contractors", { cta: "sms:+17789867616", pace: "1" })}
     </div>
   );
 }
