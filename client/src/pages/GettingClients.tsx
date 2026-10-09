@@ -16,7 +16,7 @@ export default function GettingClients() {
     <div className="pt-20">
       <SEO
         title="Getting new clients"
-        description="Missed calls, quote requests, and follow-up for busy contractors. Simple systems that help you respond and keep track."
+        description="A text for missed calls, with a quote-form link and a notification for you. Plans for renovation contractors who can’t always pick up."
         path="/services"
         keywords="contractor enquiry follow-up, missed call text back, quote request follow-up, Ren Strategies"
       />

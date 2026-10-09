@@ -47,6 +47,8 @@ button{font:inherit;color:inherit}
 .head{max-width:820px;display:grid;gap:18px}
 .head h2{font-size:clamp(2.1rem,5cqi,3.6rem);line-height:1.06;letter-spacing:-.01em}
 .head p{font-size:clamp(1.1rem,1.8cqi,1.32rem);line-height:1.55;color:var(--n800);max-width:56ch}
+.jump{justify-self:start;width:fit-content;font-size:.95rem;font-weight:700;color:var(--ink);text-underline-offset:4px}
+.leadin{margin:clamp(36px,5cqi,56px) 0 0;font-family:var(--fh);font-weight:400;font-size:clamp(1.45rem,2.6cqi,2rem);line-height:1.15}
 
 /* workflow */
 .flow{margin-top:clamp(40px,6cqi,64px);background:var(--n100);border-radius:32px;padding:clamp(18px,3cqi,36px);box-shadow:var(--sh-sm)}
@@ -163,9 +165,12 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
 .prow .tx b{font-size:1rem}
 .prow .tx span{font-size:.88rem;color:var(--n700)}
 .prow .amt{font-family:var(--fh);font-size:1.3rem;color:var(--ink);white-space:nowrap}
-.ptot{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:8px;padding:14px 16px;border-radius:18px;background:var(--sg200);color:var(--sg800);font-weight:700}
-.ptot .amt{font-family:var(--fh);font-weight:400;font-size:clamp(1.6rem,3cqi,2.1rem);color:var(--sg800)}
-.pfine{font-size:.85rem;color:var(--n700);margin-top:6px}
+.ptot{display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin-top:8px;padding:14px 16px;border-radius:18px;background:var(--sg200);color:var(--sg800);font-weight:700}
+.ptot .amt{font-family:var(--fh);font-weight:400;font-size:clamp(2rem,4cqi,2.8rem);line-height:1;color:var(--sg800)}
+.ptot .lab{font-size:1rem;line-height:1.35}
+.nexts{font-size:1.05rem;font-weight:700;color:var(--ink);margin-top:8px}
+.pfine{font-size:.85rem;line-height:1.45;color:var(--n700);margin-top:6px}
+.scope{margin:clamp(48px,7cqi,80px) 0 0;max-width:62ch;font-size:1.05rem;line-height:1.55;color:var(--n800)}
 .value h3{font-size:clamp(2rem,4.6cqi,3.4rem);line-height:1.08}
 .value p{font-size:clamp(1.08rem,1.7cqi,1.25rem);line-height:1.55;color:var(--n800);max-width:52ch}
 
@@ -195,12 +200,15 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
 .assure h3{font-size:clamp(1.6rem,3cqi,2.2rem);line-height:1.15}
 .assure .at{display:grid;gap:12px}
 .assure p{font-size:1.08rem;line-height:1.6;color:var(--sg800)}
-.final{margin-top:clamp(56px,8cqi,96px);display:grid;gap:24px;justify-items:start}
-.final h3{font-size:clamp(1.8rem,3.6cqi,2.8rem);line-height:1.12;max-width:20ch}
-.final .ask{margin:0;max-width:42ch;font-size:1.05rem;line-height:1.5;color:var(--n800)}
-.tiers{list-style:none;margin:0;padding:0;display:grid;gap:14px;width:min(100%,640px)}
-.tiers li{display:grid;gap:4px;background:var(--n100);padding:16px 18px;box-shadow:var(--sh-sm)}
-.tiers b{font-family:var(--fh);font-weight:400;font-size:1.35rem}
+.final{margin-top:clamp(56px,8cqi,96px);display:grid;gap:24px;justify-items:start;width:100%}
+.final h3{font-size:clamp(1.8rem,3.6cqi,2.8rem);line-height:1.12;max-width:16em}
+#plans{scroll-margin-top:96px}
+.final .ask{margin:0;max-width:46ch;font-size:1.05rem;line-height:1.5;color:var(--n800)}
+.tiers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:100%}
+.tiers li{display:grid;gap:6px;align-content:start;background:var(--n100);padding:18px 18px 20px;box-shadow:var(--sh-sm)}
+.tiers li.feat{background:var(--ac100);box-shadow:var(--sh-md);outline:2px solid var(--ac)}
+.tiers b{font-family:var(--fh);font-weight:400;font-size:clamp(1.45rem,2.4cqi,1.8rem);line-height:1.1}
+.tiers .name{font-weight:700;font-size:1rem;line-height:1.3}
 .tiers span{font-size:.98rem;line-height:1.45;color:var(--n800)}
 
 /* video + cta */
@@ -232,6 +240,7 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
 @container (max-width: 1100px){
   .grid{grid-template-columns:1fr}
   .svcs{grid-template-columns:1fr 1fr}
+  .tiers{grid-template-columns:1fr}
   .steps li{padding:8px 12px}
 }
 @container (max-width: 760px){
@@ -241,6 +250,7 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
   .phone{justify-self:center;width:100%;max-width:300px}
   .scr{min-height:470px}
   .svcs{grid-template-columns:1fr}
+  .tiers{grid-template-columns:1fr}
   .video{grid-template-columns:1fr}
   .assure{grid-template-columns:1fr}
   .vsec{grid-template-columns:1fr}
@@ -256,9 +266,13 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
   const html = `
 <section class="wrap" aria-labelledby="mc-h">
   <div class="head">
-    <h2 id="mc-h">You’re on a job. A new customer is calling someone else.</h2>
-    <p>A missed call or an unanswered quote doesn’t wait. They book the contractor who replies first. A short text, sent for you, gives them a next step while you’re still working, then puts the ones who need you back on your list.</p>
+    <h2 id="mc-h">You can’t always get to the phone. What if it’s your next renovation customer?</h2>
+    <p>You’re on a job, meeting a client, or focused on getting work finished. A call comes in, and you can’t answer.</p>
+    <p>An automatic text gives the caller a way to share their project details or request a callback. You get notified, so you know who needs a response when you’re available.</p>
+    <a class="jump" href="#plans" data-act="plans">See plans and pricing</a>
   </div>
+
+  <h3 class="leadin">See what happens when you miss a call.</h3>
 
   <div class="flow">
     <div class="bar">
@@ -270,11 +284,11 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
     </div>
     <div class="grid">
       <ol class="steps" aria-label="Example workflow steps">
-        <li data-step="0"><span class="n">1</span><span><b>You’re on a job</b><span class="d">Your status reads “On a job site.”</span></span></li>
-        <li data-step="1"><span class="n">2</span><span><b>A new customer can’t get through</b><span class="d">The call rings and becomes a missed call.</span></span></li>
-        <li data-step="2"><span class="n">3</span><span><b>They get a friendly text</b><span class="d">With a link to request a quote, or the option to ask for a call back.</span></span></li>
-        <li data-step="3"><span class="n">4</span><span><b>They choose a next step</b><span class="d">Request a quote, or request a callback.</span></span></li>
-        <li data-step="4"><span class="n">5</span><span><b>You’re notified</b><span class="d">The callback request arrives with a clear reminder to respond.</span></span></li>
+        <li data-step="0"><span class="n">1</span><span><b>You’re focused on work</b><span class="d">A call can come in while you’re in the middle of something else.</span></span></li>
+        <li data-step="1"><span class="n">2</span><span><b>A call goes unanswered</b><span class="d">It rings, then shows as a missed call.</span></span></li>
+        <li data-step="2"><span class="n">3</span><span><b>They get a text from your business</b><span class="d">It names Northside Renovations, with a quote-form link and a way to request a callback.</span></span></li>
+        <li data-step="3"><span class="n">4</span><span><b>They send details, or ask for a call</b><span class="d">Project details, or a callback request.</span></span></li>
+        <li data-step="4"><span class="n">5</span><span><b>You get a notification</b><span class="d">It shows what they sent, and the next action.</span></span></li>
       </ol>
 
       <div class="stage" role="img" aria-label="Illustration of the example workflow: the practice view on one side and the caller's phone on the other.">
@@ -283,16 +297,14 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
           <div class="box status" data-k="status">
             <div class="av">DR</div>
             <div class="who"><b>Dan Reyes</b><span>Owner · Northside Renovations</span></div>
-            <span class="pill"><i></i><span class="s1">Available</span><span class="s2">On a job site</span></span>
           </div>
           <div class="box call rv" data-k="call">
             <div class="ci"><span class="ic1">${ic.phone}</span><span class="ic2">${ic.missed}</span></div>
             <div class="who"><b><span class="r">Incoming call</span><span class="m">Missed call</span></b><span>New number · 2:14pm <span class="x">· text reply sent</span></span></div>
           </div>
           <div class="box note rv" data-k="note">
-            <div class="top"><div class="bi">${ic.bell}</div><span class="rn">Reminder: reply needed</span><span class="tm">2:19pm</span></div>
-            <div class="who"><b>Call Jordan M. back</b><q>It’s for a kitchen renovation. Weekday mornings are best for a call.</q></div>
-            <span class="jv"><strong>est. $25k</strong>Kitchen renovation</span>
+            <div class="top"><div class="bi">${ic.bell}</div><span class="rn">Next action</span><span class="tm">2:19pm</span></div>
+            <div class="who"><b>Call Jordan M. back</b><q>Kitchen renovation. Weekday mornings work best for a call.</q></div>
             <div class="acts"><span class="mini p">${ic.phone}Call back</span><span class="mini">Mark as handled</span></div>
           </div>
         </div>
@@ -302,13 +314,13 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
             <div class="ph"><div class="av">NR</div><b>Northside Renovations</b><span>Text message</span></div>
             <div class="thread">
               <div class="typing rv" data-k="typing"><i></i><i></i><i></i></div>
-              <div class="inb rv" data-k="sms">Sorry we missed you—we’re on a job right now. You can request a quote here, or reply with a good time for us to call.</div>
+              <div class="inb rv" data-k="sms">This is Northside Renovations. Sorry we missed your call. You can request a quote here, or ask for a callback.</div>
               <div class="opts rv" data-k="opts">
                 <span class="opt">${ic.clip}Request a quote</span>
                 <span class="or">or</span>
                 <span class="opt" data-k="cb">${ic.phone}Request a callback</span>
               </div>
-              <div class="out rv" data-k="reply">It’s for a kitchen renovation. Weekday mornings are best for a call.</div>
+              <div class="out rv" data-k="reply">It’s a kitchen renovation. Weekday mornings work best for a call.</div>
             </div>
             <div class="calling" data-k="calling">
               <div class="ring">${ic.phone}</div>
@@ -320,72 +332,76 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
         </div>
       </div>
     </div>
-    <p class="fine">Example with fictional details. Message wording, quote link and reminders are set up with you to suit your business.</p>
+    <p class="fine">Illustrative example. Message wording, quote links, and follow-up are configured for your business.</p>
   </div>
 
   <div class="vsec">
     <div class="value">
-      <h3>Less phone tag. Fewer loose ends.</h3>
-      <p>Every missed call or unanswered quote request could be a real job. Give customers a clear next step and spend less time remembering who you still need to get back to.</p>
+      <h3>A reply is how you find out what the job is.</h3>
+      <p>These amounts are examples of potential project value. They come from details someone supplied, or from your own estimate. They are not calculated from a missed call on its own, and they are not a promise that every inquiry becomes a job.</p>
     </div>
-    <div class="pipe" role="group" aria-label="Example: open enquiries and their estimated job value">
-      <div class="ph2"><b>Waiting on a reply this week</b><span class="tag">Example</span></div>
-      <div class="prow"><span class="mi">${ic.missed}</span><span class="tx"><b>Jordan M. · kitchen renovation</b><span>Missed call · callback requested</span></span><span class="amt">$25k</span></div>
-      <div class="prow"><span class="mi">${ic.mail}</span><span class="tx"><b>Priya S. · bathroom refit</b><span>Quote request · reply needed</span></span><span class="amt">$14k</span></div>
-      <div class="prow"><span class="mi">${ic.clip}</span><span class="tx"><b>Lee T. · deck build</b><span>Quote sent · no reply yet</span></span><span class="amt">$18k</span></div>
-      <div class="ptot"><span>Estimated work waiting on you</span><span class="amt">$57k</span></div>
-      <p class="pfine">Fictional job values for illustration. Keeping these visible makes it easier to follow up before an enquiry goes cold.</p>
+    <div class="pipe" role="group" aria-label="Fictional examples of potential project value">
+      <div class="ph2"><b>Example inquiries</b><span class="tag">Fictional</span></div>
+      <div class="prow"><span class="mi">${ic.missed}</span><span class="tx"><b>Jordan M. · Kitchen renovation</b><span>Callback requested. Return the call.</span></span><span class="amt">$25,000</span></div>
+      <div class="prow"><span class="mi">${ic.mail}</span><span class="tx"><b>Priya S. · Bathroom renovation</b><span>Quote request received. Review details and respond.</span></span><span class="amt">$14,000</span></div>
+      <div class="prow"><span class="mi">${ic.clip}</span><span class="tx"><b>Lee T. · Deck build</b><span>Estimate sent, awaiting customer reply. Follow up on the agreed date.</span></span><span class="amt">$18,000</span></div>
+      <div class="ptot"><span class="amt">$57,000</span><span class="lab">in potential project value</span></div>
+      <p class="nexts">Three inquiries. Three next steps.</p>
+      <p class="pfine">Fictional examples. Amounts illustrate potential project revenue, not profit, confirmed bookings, or revenue recovered by this service.</p>
     </div>
   </div>
 
-  <ul class="svcs" aria-label="Three situations, with example workflows">
-    <li class="svc"><div class="top"><div class="si">${ic.phone}</div><span class="ex">Example</span></div>
-      <h4>When you miss a call</h4><p>Send a friendly acknowledgement with a quote request link or a way to request a callback.</p>
+  <p class="scope">The plans below cover missed-call inquiries. Acknowledging a website quote request, and following up after an estimate is sent, can be added separately.</p>
+
+  <ul class="svcs" aria-label="Example workflows. Website quote requests and estimate follow-up are optional.">
+    <li class="svc"><div class="top"><div class="si">${ic.phone}</div><span class="ex">In the plans</span></div>
+      <h4>Responding to a missed call</h4><p>A text goes out with your quote-form link and a way to request a callback. You get a notification with what they sent and the next action.</p>
       <ol class="mf">
         <li><span class="mi w">${ic.missed}</span><span><b>Missed call</b><span class="t">New number · 2:14pm</span></span></li>
-        <li><span class="mi">${ic.msg}</span><span><b>Text response sent</b><span class="t">Quote link, or reply with a good time to call</span></span></li>
-        <li><span class="mi">${ic.reply}</span><span><b>Callback requested</b><span class="t">“It’s for a kitchen renovation.”</span></span></li>
-        <li><span class="mi ok">${ic.bell}</span><span><b>Reminder for you</b><span class="t">Call Jordan back</span></span></li>
+        <li><span class="mi">${ic.msg}</span><span><b>Text response sent</b><span class="t">Quote-form link, or a request for a callback</span></span></li>
+        <li><span class="mi">${ic.reply}</span><span><b>Details or a callback request</b><span class="t">“It’s a kitchen renovation.”</span></span></li>
+        <li><span class="mi ok">${ic.bell}</span><span><b>Notification for you</b><span class="t">Call Jordan back</span></span></li>
       </ol>
-      <span class="jv"><strong>est. $25k</strong>Kitchen renovation</span></li>
-    <li class="svc"><div class="top"><div class="si">${ic.mail}</div><span class="ex">Example</span></div>
-      <h4>When a quote request comes in</h4><p>Let them know it arrived, explain when to expect a reply or site visit, and keep outstanding requests visible.</p>
+    </li>
+    <li class="svc"><div class="top"><div class="si">${ic.mail}</div><span class="ex">Optional</span></div>
+      <h4>Acknowledging a website quote request</h4><p>Optional, and scoped separately. They can get a short acknowledgement in the time you and I agree. There is no set number of days unless you choose one.</p>
       <ol class="mf">
-        <li><span class="mi">${ic.mail}</span><span><b>Quote request received</b><span class="t">Website form · Priya S. · bathroom refit</span></span></li>
-        <li><span class="mi">${ic.send}</span><span><b>Acknowledgement sent</b><span class="t">“Thanks for getting in touch. We’ll reply within two working days to arrange a visit.”</span></span></li>
-        <li><span class="mi w">${ic.bell}</span><span><b>Reply needed</b><span class="t">Stays on your list until you respond</span></span></li>
+        <li><span class="mi">${ic.mail}</span><span><b>Quote request received</b><span class="t">Website form · Priya S. · bathroom renovation</span></span></li>
+        <li><span class="mi">${ic.send}</span><span><b>Acknowledgement sent</b><span class="t">“Thanks for getting in touch. We’ll reply within the time we agreed, to arrange a visit.”</span></span></li>
+        <li><span class="mi w">${ic.bell}</span><span><b>Reply needed</b><span class="t">Stays visible until you respond</span></span></li>
         <li><span class="mi ok">${ic.check}</span><span><b>Marked as handled</b><span class="t">By you · Wednesday</span></span></li>
       </ol>
-      <span class="jv"><strong>est. $14k</strong>Bathroom refit</span></li>
-    <li class="svc"><div class="top"><div class="si">${ic.clip}</div><span class="ex">Example</span></div>
-      <h4>After you send a quote</h4><p>Check in on quotes that haven’t had a reply, with a friendly message you’ve approved or a reminder for you to call.</p>
+    </li>
+    <li class="svc"><div class="top"><div class="si">${ic.clip}</div><span class="ex">Optional</span></div>
+      <h4>Following up after an estimate is sent</h4><p>Optional, and scoped separately. A check-in can go out on the date you choose, using a message you’ve approved.</p>
       <ol class="mf">
-        <li><span class="mi">${ic.clip}</span><span><b>You mark the quote as sent</b><span class="t">Deck build · follow-up chosen: check in after 5 days</span></span></li>
-        <li><span class="mi">${ic.send}</span><span><b>Your approved message is sent</b><span class="t">“Just checking the quote came through. Happy to answer any questions.”</span></span></li>
-        <li><span class="mi">${ic.reply}</span><span><b>A reply comes in</b><span class="t">“Thanks—could the work start in May?”</span></span></li>
+        <li><span class="mi">${ic.clip}</span><span><b>You mark the estimate as sent</b><span class="t">Deck build · follow-up on the date you set</span></span></li>
+        <li><span class="mi">${ic.send}</span><span><b>Your approved message is sent</b><span class="t">“Just checking the estimate came through. Happy to answer any questions.”</span></span></li>
+        <li><span class="mi">${ic.reply}</span><span><b>A reply comes in</b><span class="t">“Thanks. Could the work start in May?”</span></span></li>
         <li><span class="mi ok">${ic.bell}</span><span><b>It comes back to you</b><span class="t">Shown as reply needed</span></span></li>
       </ol>
-      <span class="jv"><strong>quoted $18k</strong>Deck build</span></li>
+    </li>
   </ul>
 
   <div class="assure">
-    <h3>Built around the phone, email, and job tools you already use.</h3>
+    <h3>I start with the phone, website, email, and job tools you already use.</h3>
     <div class="at">
-      <p>I start by reviewing how enquiries reach you now—your phone, website, email, and any quoting or scheduling tools already in place.</p>
-      <p>Then I recommend support for the gaps, so you keep what’s working and don’t take on a new system you don’t need.</p>
+      <p>Phone setup and call routing are reviewed first. Then I look at how inquiries reach you, and recommend only what fits. Nothing is assumed to connect until that review is done.</p>
+      <p>The setup collects what the caller sends. You still set prices, availability, and what you commit to.</p>
+      <p>Automated follow-up stops at the handoff we configure. A call or message you handle outside that setup may need to be marked as handled.</p>
     </div>
   </div>
 
-  <div class="final">
-    <h3>Free for 90 days.</h3>
-    <p class="ask">Then a monthly plan, based on the setup.</p>
+  <div class="final" id="plans">
+    <h3>Choose how much help you need with incoming inquiries.</h3>
+    <p class="ask">Free for 90 days. After that, the monthly price of the plan you choose.</p>
     <ul class="tiers">
-      <li><b>$197 a month</b><span>A friendly text goes right back when you miss a call, with a link to request a quote. They can send the job details while they’re still deciding who to hire. You get notified.</span></li>
-      <li><b>$297 a month</b><span>The same text, asking them to submit your quote form. You get friendly nudges to call them back.</span></li>
-      <li><b>$397 a month</b><span>Leads are sorted using criteria you set. You talk to the ones that fit. The rest sit there until you want to look.</span></li>
+      <li><b>$197 a month</b><span class="name">Respond when you can’t answer</span><span>Send missed callers a text with your quote-form link and get notified. You handle replies and further follow-up.</span></li>
+      <li class="feat"><b>$297 a month</b><span class="name">Keep the inquiry moving</span><span>Everything in the $197 plan, plus a gentle follow-up when callers haven’t responded and the option to share project details by text. Get their project type, location, and preferred timing before you call back.</span></li>
+      <li><b>$397 a month</b><span class="name">Prioritize the work you want</span><span>Everything in the $297 plan, plus sorting against your service area, project types, and agreed criteria. Review matching inquiries first. Other inquiries stay available, and unclear answers are flagged for review.</span></li>
     </ul>
-    <p class="ask">Not sure which fits? Tell me which part of following up takes the most time.</p>
-    <a class="cta" data-k="cta" href="sms:+17789867616">${ic.msg}Text me at 778-986-7616</a>
+    <p class="ask">Which takes up more of your time: getting back to people or figuring out whether the job is a fit?</p>
+    <a class="cta" data-k="cta" href="sms:+17789867616">${ic.msg}Text Miranda at 778-986-7616</a>
   </div>
 </section>`;
 
@@ -403,7 +419,6 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
       const step = (i) => () => this.steps.forEach((li, j) => { li.classList.toggle('active', j === i); li.classList.toggle('done', j < i); });
       this.events = [
         [0.6, step(0)],
-        [1.4, st('status', 'session')],
         [5.0, step(1)],
         [5.6, () => { on('call')(); st('call', 'ringing')(); on('calling')(); }],
         [10.0, () => { st('call', 'missed')(); st('calling', 'missed')(); }],
@@ -427,6 +442,12 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
       this.attributeChangedCallback();
       this.root.addEventListener('click', (e) => {
         const b = e.target.closest('[data-act]'); if (!b) return;
+        if (b.dataset.act === 'plans') {
+          e.preventDefault();
+          const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+          this.root.querySelector('#plans')?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+          return;
+        }
         ({ replay: () => this.replay(), pause: () => (this.playing ? this.pause() : this.resume()), video: () => this.playVideo() })[b.dataset.act]();
       });
       if (matchMedia('(prefers-reduced-motion: reduce)').matches) { this.classList.add('reduced'); this.showFinal(); return; }
