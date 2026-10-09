@@ -32,7 +32,7 @@
   const css = `
 :host{
   --bg:#f7f5f2; --surface:#efeae4; --ink:#1a1a1a;
-  --n100:#f7f5f2; --n200:#efeae4; --n300:#e4ddd4; --n400:#cfc6bb; --n700:#666666; --n800:#3a3a3a;
+  --n100:#fffdfa; --n200:#efeae4; --n300:#e4ddd4; --n400:#cfc6bb; --n700:#666666; --n800:#3a3a3a;
   --ac:#d4a574; --ac100:#f8efe6; --ac200:#f3e4d4; --ac300:#e8d0b4; --ac600:#c4925f; --ac700:#a87545;
   --sg100:#f3f5f3; --sg200:#e6ebe7; --sg300:#d5ddd7; --sg400:#b7c2ba; --sg600:#9da89f; --sg700:#6f7b74; --sg800:#4e5852;
   --fh:"Cormorant Garamond", Georgia, serif; --fb:"Nunito Sans", system-ui, sans-serif;
@@ -41,8 +41,8 @@
 }
 *{box-sizing:border-box}
 :host(.instant) *,:host(.instant) *::before,:host(.instant) *::after{transition:none!important;animation:none!important}
-.wrap{max-width:1200px;margin:0 auto;padding:clamp(56px,9cqi,120px) clamp(18px,5cqi,56px)}
-h2,h3{font-family:var(--fh);font-weight:400;margin:0;text-wrap:balance}
+.wrap{max-width:1120px;margin:0 auto;padding:clamp(56px,9cqi,120px) clamp(20px,5cqi,56px)}
+h2,h3{font-family:var(--fh);font-weight:500;margin:0;text-wrap:balance}
 p{margin:0;text-wrap:pretty}
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--ac);outline-offset:3px}
@@ -159,7 +159,7 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
 .calling:not([data-state=missed]) .ring::after{animation:rip 2s ease-out 1s infinite}
 .calling[data-state=missed] .ring{background:var(--ac600)}
 @keyframes rip{from{transform:scale(1);opacity:.7}to{transform:scale(1.9);opacity:0}}
-.fine{margin-top:16px;font-size:.88rem;color:var(--n700)}
+.fine{margin-top:16px;font-size:.95rem;line-height:1.45;color:var(--n700)}
 
 /* section heads */
 .vsec{margin-top:clamp(72px,10cqi,128px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5cqi,64px);align-items:center}
@@ -178,35 +178,24 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
 .ptot .amt{font-family:var(--fh);font-weight:400;font-size:clamp(2rem,4cqi,2.8rem);line-height:1;color:var(--sg800)}
 .ptot .lab{font-size:1rem;line-height:1.35}
 .nexts{font-size:1.05rem;font-weight:700;color:var(--ink);margin-top:8px}
-.pfine{font-size:.85rem;line-height:1.45;color:var(--n700);margin-top:6px}
-.scope{margin:clamp(48px,7cqi,80px) 0 0;max-width:62ch;font-size:1.05rem;line-height:1.55;color:var(--n800)}
+.pfine{font-size:.95rem;line-height:1.45;color:var(--n700);margin-top:8px}
+.scope{margin:clamp(56px,8cqi,88px) 0 0;max-width:58ch;font-size:1.15rem;line-height:1.5;color:var(--n800)}
 .value h3{font-size:clamp(2rem,4.6cqi,3.4rem);line-height:1.08}
 .value p{font-size:clamp(1.08rem,1.7cqi,1.25rem);line-height:1.55;color:var(--n800);max-width:52ch}
 
 /* services */
 .svcs{list-style:none;margin:clamp(40px,6cqi,64px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4cqi,28px)}
-.svc{background:var(--n100);border-radius:28px;padding:26px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--sh-sm)}
+.svc{background:var(--n100);border-radius:28px;padding:clamp(24px,3cqi,32px);display:flex;flex-direction:column;gap:16px;box-shadow:var(--sh-sm);min-height:260px;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+:host(.armed) .svc:not(.go){opacity:0;transform:translateY(12px)}
 .svc .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .svc .si{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:20px;background:var(--sg200);color:var(--sg700)}
 .svc .ex{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--n700);border:1.5px solid var(--n300);border-radius:999px;padding:4px 10px}
-.svc h4{font-family:var(--fh);font-weight:400;font-size:1.7rem;line-height:1.15;margin:0}
-.svc p{font-size:1.12rem;line-height:1.45;color:var(--n800)}
-.mf{list-style:none;margin:6px 0 0;padding:16px 14px;background:var(--sg200);border-radius:20px;display:grid;gap:0}
-.mf li{position:relative;display:grid;grid-template-columns:30px 1fr;gap:10px;padding-bottom:14px;transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
-.mf li:last-child{padding-bottom:0}
-.mf li::before{content:"";position:absolute;left:14px;top:30px;bottom:0;width:2px;background:var(--sg400)}
-.mf li:last-child::before{display:none}
-:host(.armed) .svc:not(.go) .mf li{opacity:0;transform:translateY(8px)}
-.svc.go .mf li:nth-child(2){transition-delay:1.4s}.svc.go .mf li:nth-child(3){transition-delay:2.8s}.svc.go .mf li:nth-child(4){transition-delay:4.2s}
-.mf .mi{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:14px;background:var(--n100);color:var(--sg700)}
-.mf .mi.w{background:var(--ac200);color:var(--ac700)}
-.mf .mi.ok{background:var(--sg600);color:#fff}
-.mf b{display:block;font-size:1.05rem;line-height:1.3;padding-top:4px}
-.mf span.t{display:block;font-size:1rem;line-height:1.35;color:var(--n800);margin-top:2px}
+.svc h4{font-family:var(--fh);font-weight:500;font-size:clamp(1.8rem,3cqi,2.2rem);line-height:1.1;margin:4px 0 0}
+.svc p{font-size:1.18rem;line-height:1.5;color:var(--n800);max-width:30ch}
 
 /* reassurance */
 .assure{margin-top:clamp(56px,8cqi,96px);background:var(--sg200);border-radius:32px;padding:clamp(24px,4cqi,48px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(20px,4cqi,56px);align-items:start}
-.assure h3{font-size:clamp(1.6rem,3cqi,2.2rem);line-height:1.15}
+.assure h3{font-size:clamp(1.8rem,3cqi,2.4rem);line-height:1.12}
 .assure .at{display:grid;gap:12px}
 .assure p{font-size:1.15rem;line-height:1.5;color:var(--sg800)}
 .final{margin-top:clamp(56px,8cqi,96px);display:grid;gap:28px;justify-items:start;width:100%}
@@ -218,7 +207,7 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
 .tiers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:100%}
 .tiers li{display:grid;gap:8px;align-content:start;background:var(--n100);padding:22px 22px 26px;box-shadow:var(--sh-sm)}
 .tiers li.feat{background:var(--ac100);box-shadow:var(--sh-md);outline:2px solid var(--ac)}
-.tiers b{font-family:var(--fh);font-weight:400;font-size:clamp(1.7rem,2.8cqi,2.2rem);line-height:1.05}
+.tiers b{font-family:var(--fh);font-weight:500;font-size:clamp(1.7rem,2.8cqi,2.2rem);line-height:1.05}
 .tiers .name{font-weight:700;font-size:1.15rem;line-height:1.3}
 .tiers span{font-size:1.12rem;line-height:1.4;color:var(--ink)}
 
@@ -376,30 +365,12 @@ ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s
   <ul class="svcs" aria-label="Example workflows. Website quote requests and estimate follow-up are optional.">
     <li class="svc"><div class="top"><div class="si">${ic.phone}</div><span class="ex">In the plans</span></div>
       <h4>Responding to a missed call</h4><p>A text with your quote link, then a notification for you.</p>
-      <ol class="mf">
-        <li><span class="mi w">${ic.missed}</span><span><b>Missed call</b><span class="t">New number · 2:14pm</span></span></li>
-        <li><span class="mi">${ic.msg}</span><span><b>Text response sent</b><span class="t">Quote-form link, or a request for a callback</span></span></li>
-        <li><span class="mi">${ic.reply}</span><span><b>Details or a callback request</b><span class="t">“It’s a kitchen renovation.”</span></span></li>
-        <li><span class="mi ok">${ic.bell}</span><span><b>Notification for you</b><span class="t">Call Jordan back</span></span></li>
-      </ol>
     </li>
     <li class="svc"><div class="top"><div class="si">${ic.mail}</div><span class="ex">Optional</span></div>
       <h4>Acknowledging a website quote request</h4><p>Optional. A short reply in the time you and I agree.</p>
-      <ol class="mf">
-        <li><span class="mi">${ic.mail}</span><span><b>Quote request received</b><span class="t">Website form · Priya S. · bathroom renovation</span></span></li>
-        <li><span class="mi">${ic.send}</span><span><b>Acknowledgement sent</b><span class="t">“Thanks for getting in touch. We’ll reply within the time we agreed, to arrange a visit.”</span></span></li>
-        <li><span class="mi w">${ic.bell}</span><span><b>Reply needed</b><span class="t">Stays visible until you respond</span></span></li>
-        <li><span class="mi ok">${ic.check}</span><span><b>Marked as handled</b><span class="t">By you · Wednesday</span></span></li>
-      </ol>
     </li>
     <li class="svc"><div class="top"><div class="si">${ic.clip}</div><span class="ex">Optional</span></div>
       <h4>Following up after an estimate is sent</h4><p>Optional. A check-in on the date you choose.</p>
-      <ol class="mf">
-        <li><span class="mi">${ic.clip}</span><span><b>You mark the estimate as sent</b><span class="t">Deck build · follow-up on the date you set</span></span></li>
-        <li><span class="mi">${ic.send}</span><span><b>Your approved message is sent</b><span class="t">“Just checking the estimate came through. Happy to answer any questions.”</span></span></li>
-        <li><span class="mi">${ic.reply}</span><span><b>A reply comes in</b><span class="t">“Thanks. Could the work start in May?”</span></span></li>
-        <li><span class="mi ok">${ic.bell}</span><span><b>It comes back to you</b><span class="t">Shown as reply needed</span></span></li>
-      </ol>
     </li>
   </ul>
 
